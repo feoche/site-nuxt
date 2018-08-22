@@ -1,8 +1,8 @@
 <template><nuxt/></template>
 <style>
     html {
-        font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        font-size: 1rem;
+        font-family: "Lato", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1.2rem;
         word-spacing: .1rem;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
@@ -18,20 +18,5 @@
 
     a {
         color: #0075d5;
-        text-decoration: none;
-        text-shadow:
-                -2px -2px white,
-                -2px 2px white,
-                2px -2px white,
-                2px 2px white;
-        box-shadow: inset 0 -0.1em white,
-        inset 0 -0.125em #007cdd;
-    }
-
-    a::selection {
-        text-shadow: none;
-        box-shadow: none;
-        background-color: #008cf9;
-        color: white;
     }
 </style>

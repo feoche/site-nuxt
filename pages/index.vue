@@ -1,35 +1,21 @@
 <template>
     <div>
-        <section class="container logo">
-            <div>
-                <app-logo/>
-                <h1 class="title">
-                    François Eoche
-                </h1>
-                <h2 class="subtitle">
-                    UX Developer
-                </h2>
-            </div>
-        </section>
-        <section class="container intro">
-            <intro/>
-        </section>
-        <section class="container cv">
-            <cv/>
-        </section>
+        <app-logo/>
+        <intro/>
+        <cursus/>
     </div>
 </template>
 
 <script>
     import AppLogo from '~/components/AppLogo.vue'
     import Intro from '~/components/Intro.vue'
-    import CV from '~/components/CV.vue'
+    import Cursus from '~/components/cursus.vue'
 
     export default {
         components: {
             AppLogo,
             Intro,
-            CV
+            Cursus
         }
     }
 </script>
@@ -40,6 +26,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        flex-direction: column;
         padding: 5vh 0;
     }
 

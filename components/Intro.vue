@@ -1,19 +1,21 @@
 <template>
-    <div class="introduction">
-        <p class="introduction-text">
-            Hi! I'm François, a 28 year-old front-end developer from Rennes, France.
-        </p>
-        <p class="introduction-text">
-            I've been working for {{ workDuration }} years as a developer in <a href="#">several companies</a> and on many many projects.<br>
-            Apart from that, I'm also keen to work on styling, accessibility and <abbr title="User Experience">UX</abbr>.
-        </p>
-        <p class="introduction-text">
-            I <a href="#">graduated</a> in 2014 with a Masters degree in Computer Science with a special emphasis on interface ergonomics and <abbr title="Information and Communications Technology">ICT</abbr>.
-        </p>
-        <p class="introduction-text">
-            On this website you will mostly find <a href="#">what I have worked on</a> and what I'm fond of, but also <a href="#">my personal projects</a> and some of the <a href="#">side activities I take care of</a>. Enjoy your visit!
-        </p>
-    </div>
+    <section class="container introduction">
+        <div>
+            <p class="introduction-text">
+                Hi! I'm François, a 28 year-old front-end developer from Rennes, France.
+            </p>
+            <p class="introduction-text">
+                I've been working for {{ workDuration }} years as a developer in <a href="#">several companies</a> and on many many projects.<br>
+                Apart from that, I'm also keen to work on styling, accessibility and <abbr title="User Experience">UX</abbr>.
+            </p>
+            <p class="introduction-text">
+                I <a href="#">graduated</a> in 2014 with a Masters degree in Computer Science with a special emphasis on interface ergonomics and <abbr title="Information and Communications Technology">ICT</abbr>.
+            </p>
+            <p class="introduction-text">
+                On this website you will mostly find <a href="#">what I have worked on</a> and what I'm fond of, but also <a href="#">my personal projects</a> and some of the <a href="#">side activities I take care of</a>. Enjoy your visit!
+            </p>
+        </div>
+    </section>
 </template>
 
 <script>
@@ -35,7 +37,6 @@
     .introduction {
         width: 80vw;
         margin: 0 auto;
-        font-size: 1.2rem;
         text-align: left;
     }
 
