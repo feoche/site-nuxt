@@ -14,17 +14,22 @@
         <section class="container intro">
             <intro/>
         </section>
+        <section class="container cv">
+            <cv/>
+        </section>
     </div>
 </template>
 
 <script>
     import AppLogo from '~/components/AppLogo.vue'
     import Intro from '~/components/Intro.vue'
+    import CV from '~/components/CV.vue'
 
     export default {
         components: {
             AppLogo,
-            Intro
+            Intro,
+            CV
         }
     }
 </script>

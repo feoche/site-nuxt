@@ -1,7 +1,4 @@
-<template>
-    <nuxt/>
-</template>
-
+<template><nuxt/></template>
 <style>
     html {
         font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -20,7 +17,7 @@
     }
 
     a {
-        color: #0077d8;
+        color: #0075d5;
         text-decoration: none;
         text-shadow:
                 -2px -2px white,

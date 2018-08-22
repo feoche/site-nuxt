@@ -4,11 +4,14 @@
             Hi! I'm François, a 28 year-old front-end developer from Rennes, France.
         </p>
         <p class="introduction-text">
-            I've been working for {{ workDuration }} years as a developer <a href="#">in several companies</a> and on <a href="#">many many projects</a>.
+            I've been working for {{ workDuration }} years as a developer in <a href="#">several companies</a> and on many many projects.<br>
+            Apart from that, I'm also keen to work on styling, accessibility and <abbr title="User Experience">UX</abbr>.
+        </p>
+        <p class="introduction-text">
             I <a href="#">graduated</a> in 2014 with a Masters degree in Computer Science with a special emphasis on interface ergonomics and <abbr title="Information and Communications Technology">ICT</abbr>.
         </p>
         <p class="introduction-text">
-            On this website you will mostly find what I have worked on and what I'm fond of, but also my personal projects and some of the side activities I take care of. Enjoy!
+            On this website you will mostly find <a href="#">what I have worked on</a> and what I'm fond of, but also <a href="#">my personal projects</a> and some of the <a href="#">side activities I take care of</a>. Enjoy your visit!
         </p>
     </div>
 </template>
