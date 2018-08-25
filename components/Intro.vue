@@ -1,18 +1,25 @@
 <template>
-    <section class="container introduction">
-        <div>
+    <section id="introduction" class="container">
+        <div class="content">
             <p class="introduction-text">
                 Hi! I'm François, a 28 year-old front-end developer from Rennes, France.
             </p>
             <p class="introduction-text">
-                I've been working for {{ workDuration }} years as a developer in <a href="#">several companies</a> and on many many projects.<br>
-                Apart from that, I'm also keen to work on styling, accessibility and <abbr title="User Experience">UX</abbr>.
+                I've been working for {{ workDuration }} years as a developer in <a v-smooth-scroll href="#cv-career">several companies</a> and
+                on many many projects.<br>
+                Apart from that, I'm also keen to work on styling, accessibility and <abbr
+                    title="User Experience">UX</abbr>.
             </p>
             <p class="introduction-text">
-                I <a href="#">graduated</a> in 2014 with a Masters degree in Computer Science with a special emphasis on interface ergonomics and <abbr title="Information and Communications Technology">ICT</abbr>.
+                I <a v-smooth-scroll href="#cv-studies">graduated</a> in 2014 with a Masters degree in Computer Science with a special emphasis on
+                interface ergonomics and <abbr title="Information and Communications Technology">ICT</abbr>.
             </p>
             <p class="introduction-text">
-                On this website you will mostly find <a href="#">what I have worked on</a> and what I'm fond of, but also <a href="#">my personal projects</a> and some of the <a href="#">side activities I take care of</a>. Enjoy your visit!
+                On this website you will mostly find <a v-smooth-scroll href="#projects">what I have worked on</a> and what <a v-smooth-scroll href="#skills">I'm fond of</a>, but
+                also <a v-smooth-scroll href="#projects-personal">my personal projects</a> and some of the <a v-smooth-scroll href="#extras">side activities I take care of</a>.
+            </p>
+            <p class="introduction-text">
+                To conclude, you will have the different ways to <a v-smooth-scroll href="#contact">contact me / or follow any news</a>. Enjoy your visit!
             </p>
         </div>
     </section>
@@ -23,7 +30,7 @@
         data: () => {
             let duration = Math.abs(moment(`2014-03-10`).diff(moment(), `years`, true)).toFixed(2);
             const fraction = duration.split(`.`)[1];
-            duration = `${duration.split(`.`)[0]}${fraction > 50? `¾` : fraction > 25? `½` : `¼`}`;
+            duration = `${duration.split(`.`)[0]}${fraction > 50 ? `¾` : fraction > 25 ? `½` : `¼`}`;
 
             return {
                 age: Math.abs(moment(`1990-09-06`).diff(moment(), `years`)) + 1,
@@ -33,9 +40,9 @@
     }
 </script>
 
-<style>
-    .introduction {
-        width: 80vw;
+<style scoped>
+    #introduction {
+        padding: 6vh 0;
         margin: 0 auto;
         text-align: left;
     }
@@ -44,7 +51,7 @@
         padding: .3em 0;
     }
 
-    .introduction-text abbr {
-        text-decoration: underline;
+    .introduction-text a {
+        color: #005194;
     }
 </style>

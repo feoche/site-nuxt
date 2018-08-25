@@ -1,21 +1,34 @@
 <template>
     <div>
-        <app-logo/>
+        <logo/>
         <intro/>
         <cursus/>
+        <skills/>
+        <projects/>
+        <contact/>
     </div>
 </template>
 
 <script>
-    import AppLogo from '~/components/AppLogo.vue'
+    import Vue from 'vue'
+    import vueSmoothScroll from 'vue-smooth-scroll'
+    import Logo from '~/components/Logo.vue'
     import Intro from '~/components/Intro.vue'
-    import Cursus from '~/components/cursus.vue'
+    import Cursus from '~/components/Cursus.vue'
+    import Skills from '~/components/Skills.vue'
+    import Projects from '~/components/Projects.vue'
+    import Contact from '~/components/Contact.vue'
+
+    Vue.use(vueSmoothScroll);
 
     export default {
         components: {
-            AppLogo,
+            Logo,
             Intro,
-            Cursus
+            Cursus,
+            Skills,
+            Projects,
+            Contact
         }
     }
 </script>
@@ -30,30 +43,32 @@
         padding: 5vh 0;
     }
 
-    .logo {
-        background: #e5faf7;
+    .container .content {
+        width: 80vw;
     }
 
-    .intro {
-        background: #fcfcfc;
+    #logo {
+        background: #2abfb8;
     }
 
-    .title {
-        font-family: "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-        display: block;
-        font-weight: 300;
-        font-size: 4rem;
-        color: #35495e;
-        letter-spacing: -.3rem;
+    #introduction {
+        background: #e9e0d6;
     }
 
-    .subtitle {
-        font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-        font-weight: 300;
-        font-size: 2rem;
-        color: #35495e;
-        padding-bottom: 15px;
-        letter-spacing: -.1rem;
+    #cv {
+        background: #354458;
+    }
+
+    #skills {
+        background: #fefefe;
+    }
+
+    #projects {
+        background: #bbb;
+    }
+
+    #contact {
+        background: #eb7260;
     }
 </style>
 

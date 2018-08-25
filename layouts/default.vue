@@ -19,4 +19,9 @@
     a {
         color: #0075d5;
     }
+
+    abbr {
+        text-decoration: underline;
+        cursor: help;
+    }
 </style>
