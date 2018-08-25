@@ -6,20 +6,20 @@
                 Feel free to use these networks to get in touch with me !
             </p>
             <div class="networks">
-                <div class="network"><img src="" alt="LinkedIn"></div>
-                <div class="network"><img src="" alt="Mail"></div>
-                <div class="network"><img src="" alt="Twitter"></div>
+                <span class="network"><img src="" alt="LinkedIn"></span>
+                <span class="network"><img src="" alt="Mail"></span>
+                <span class="network"><img src="" alt="Twitter"></span>
             </div>
             <p class="contact-text">
                 Besides, you can also check out my work on many websites :
             </p>
             <div class="networks">
-                <div class="network"><img src="" alt="feoche.fr"></div>
-                <div class="network"><img src="" alt="GitHub"></div>
-                <div class="network"><img src="" alt="CodePen"></div>
+                <span class="network"><img src="" alt="feoche.fr"></span>
+                <span class="network"><img src="" alt="GitHub"></span>
+                <span class="network"><img src="" alt="CodePen"></span>
             </div>
 
-            <p class="contact-text">
+            <p class="contact-text farewell">
                 Au revoir ! 🖖
             </p>
         </div>
@@ -43,6 +43,26 @@
         font-weight: 300;
         font-size: 1.7rem;
         letter-spacing: -.05rem;
+    }
+
+    .contact-text {
+        padding: .5em 0;
+    }
+
+    .networks {
+        width: 50vw;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .network img {
+        width: 10em;
+        height: 10em;
+    }
+
+    .farewell {
+        margin: 3em 0 0;
     }
 
 </style>

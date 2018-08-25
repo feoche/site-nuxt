@@ -19,7 +19,7 @@
                 also <a v-smooth-scroll href="#projects-personal">my personal projects</a> and some of the <a v-smooth-scroll href="#extras">side activities I take care of</a>.
             </p>
             <p class="introduction-text">
-                To conclude, you will have the different ways to <a v-smooth-scroll href="#contact">contact me / or follow any news</a>. Enjoy your visit!
+                To conclude, you will have the different ways to <a v-smooth-scroll href="#contact">contact me</a> or follow any news. Enjoy your visit!
             </p>
         </div>
     </section>

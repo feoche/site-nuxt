@@ -5,6 +5,7 @@
         <cursus/>
         <skills/>
         <projects/>
+        <extra/>
         <contact/>
     </div>
 </template>
@@ -17,6 +18,7 @@
     import Cursus from '~/components/Cursus.vue'
     import Skills from '~/components/Skills.vue'
     import Projects from '~/components/Projects.vue'
+    import Extra from '~/components/Extra.vue'
     import Contact from '~/components/Contact.vue'
 
     Vue.use(vueSmoothScroll);
@@ -28,6 +30,7 @@
             Cursus,
             Skills,
             Projects,
+            Extra,
             Contact
         }
     }
@@ -52,7 +55,7 @@
     }
 
     #introduction {
-        background: #e9e0d6;
+        background: #eaeaea;
     }
 
     #cv {
@@ -64,7 +67,11 @@
     }
 
     #projects {
-        background: #bbb;
+        background: #b9d2ff;
+    }
+
+    #extra {
+        background: #ffe39e;
     }
 
     #contact {
