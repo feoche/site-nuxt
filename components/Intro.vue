@@ -5,21 +5,27 @@
                 Hi! I'm François, a 28 year-old front-end developer from Rennes, France.
             </p>
             <p class="introduction-text">
-                I've been working for {{ workDuration }} years as a developer in <a v-smooth-scroll="{duration:2000}" href="#cv-career">several companies</a> and
+                I've been working for {{ workDuration }} years as a developer in <a v-smooth-scroll="{duration:2000}"
+                                                                                    href="#cv-career">several
+                companies</a> and
                 on many many projects.<br>
                 Apart from that, I'm also keen to work on styling, accessibility and <abbr
                     title="User Experience">UX</abbr>.
             </p>
             <p class="introduction-text">
-                I <a v-smooth-scroll="{duration:2000}" href="#cv-studies">graduated</a> in 2014 with a Masters degree in Computer Science with a special emphasis on
+                I <a v-smooth-scroll="{duration:2000}" href="#cv-studies">graduated</a> in 2014 with a Masters degree in
+                Computer Science with a special emphasis on
                 interface ergonomics and <abbr title="Information and Communications Technology">ICT</abbr>.
             </p>
             <p class="introduction-text">
-                On this website you will mostly find <a v-smooth-scroll="{duration:2000}" href="#projects">what I have worked on</a> and what <a v-smooth-scroll="{duration:2000}" href="#skills">I'm fond of</a>, but
-                also <a v-smooth-scroll="{duration:2000}" href="#projects-personal">my personal projects</a> and some of the <a v-smooth-scroll="{duration:2000}" href="#extra">side activities I take care of</a>.
+                On this website you will mostly find <a v-smooth-scroll="{duration:2000}" href="#projects">what I have
+                worked on</a> and what <a v-smooth-scroll="{duration:2000}" href="#skills">I'm fond of</a>, but
+                also <a v-smooth-scroll="{duration:2000}" href="#projects-personal">my personal projects</a> and some of
+                the <a v-smooth-scroll="{duration:2000}" href="#extra">side activities I take care of</a>.
             </p>
             <p class="introduction-text">
-                To conclude, you will have the different ways to <a v-smooth-scroll="{duration:2000}" href="#contact">contact me</a> or follow any news. Enjoy your visit!
+                To conclude, you will have the different ways to <a v-smooth-scroll="{duration:2000}" href="#contact">contact
+                me</a> or follow any news. Enjoy your visit!
             </p>
         </div>
     </section>

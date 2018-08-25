@@ -13,6 +13,9 @@
 <script>
     import Vue from 'vue'
     import vueSmoothScroll from 'vue-smooth-scroll'
+    import VueSplitter from "@rmp135/vue-splitter"
+
+    // Internal
     import Logo from '~/components/Logo.vue'
     import Intro from '~/components/Intro.vue'
     import Cursus from '~/components/Cursus.vue'
@@ -25,6 +28,9 @@
 
     export default {
         components: {
+            VueSplitter,
+
+            // Internal
             Logo,
             Intro,
             Cursus,

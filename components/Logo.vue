@@ -4,12 +4,12 @@
             <img class="logo-img"
                  src="~/static/photo.jpg">
             <h1>
-        <span class="title">
-          François Eoche
-        </span>
+                <span class="title">
+                  François Eoche
+                </span>
                 <span class="subtitle">
-          Web Cabinetmaker
-        </span>
+                  Web Cabinetmaker
+                </span>
             </h1>
         </div>
     </section>
