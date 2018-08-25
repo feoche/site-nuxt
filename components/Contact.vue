@@ -6,17 +6,35 @@
                 Feel free to use these networks to get in touch with me !
             </p>
             <div class="networks">
-                <span class="network"><img src="" alt="LinkedIn"></span>
-                <span class="network"><img src="" alt="Mail"></span>
-                <span class="network"><img src="" alt="Twitter"></span>
+                <a class="network"
+                   href="#">
+                    <img src="" alt="LinkedIn">
+                </a>
+                <a class="network"
+                   href="#">
+                    <img src="" alt="Mail">
+                </a>
+                <a class="network"
+                   href="#">
+                    <img src="" alt="Twitter">
+                </a>
             </div>
             <p class="contact-text">
                 Besides, you can also check out my work on many websites :
             </p>
             <div class="networks">
-                <span class="network"><img src="" alt="feoche.fr"></span>
-                <span class="network"><img src="" alt="GitHub"></span>
-                <span class="network"><img src="" alt="CodePen"></span>
+                <a class="network"
+                   href="#">
+                    <img src="" alt="feoche.fr">
+                </a>
+                <a class="network"
+                   href="#">
+                    <img src="" alt="GitHub">
+                </a>
+                <a class="network"
+                   href="#">
+                    <img src="" alt="CodePen">
+                </a>
             </div>
 
             <p class="contact-text farewell">
@@ -46,7 +64,7 @@
     }
 
     .contact-text {
-        padding: .5em 0;
+        padding: .8em 0 1em;
     }
 
     .networks {
