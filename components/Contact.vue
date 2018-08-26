@@ -6,47 +6,80 @@
                 Feel free to use these networks to get in touch with me !
             </p>
             <div class="networks">
-                <a class="network"
-                   href="#">
-                    <img src="" alt="LinkedIn">
-                </a>
-                <a class="network"
-                   href="#">
-                    <img src="" alt="Mail">
-                </a>
-                <a class="network"
-                   href="#">
-                    <img src="" alt="Twitter">
+                <a v-for="(item, index) in networks"
+                   :key="index"
+                   :id="item.icon"
+                   class="network"
+                   :href="item.url"
+                   onclick="window.open(this.href); return false;">
+                    <svg class="network-icon">
+                        <title v-html="item.name"></title>
+                        <use :xlink:href="'#' + item.icon" />
+                    </svg>
                 </a>
             </div>
             <p class="contact-text">
                 Besides, you can also check out my work on many websites :
             </p>
             <div class="networks">
-                <a class="network"
-                   href="#">
-                    <img src="" alt="feoche.fr">
-                </a>
-                <a class="network"
-                   href="#">
-                    <img src="" alt="GitHub">
-                </a>
-                <a class="network"
-                   href="#">
-                    <img src="" alt="CodePen">
+                <a v-for="(item, index) in links"
+                   :key="index"
+                   :id="item.icon"
+                   class="network"
+                   :href="item.url"
+                   onclick="window.open(this.href); return false;">
+                    <svg class="network-icon">
+                        <title v-html="item.name"></title>
+                        <use :xlink:href="'#' + item.icon" />
+                    </svg>
                 </a>
             </div>
 
             <p class="contact-text farewell">
-                Au revoir ! 🖖
+                <em>Au revoir !</em> 🖖
             </p>
         </div>
     </section>
 </template>
 
 <script>
-    module.exports = {
-        data: () => ({})
+    export default {
+        data: () => ({
+            networks: [
+                {
+                    name: `LinkedIn`,
+                    icon: `linkedin`,
+                    url: `https://www.linkedin.com/in/francois-eoche`
+                },
+                {
+                    name: `Mail`,
+                    icon: `mail`,
+                    url: `mailto:francoiseoche at gmail dot com`
+                },
+                {
+                    name: `Twitter`,
+                    icon: `twitter`,
+                    url: `https://twitter.com/francoiseoche`
+                }
+            ],
+            links : [
+                {
+                    name: `GitHub`,
+                    icon: `github`,
+                    url: `https://github.com/feoche`
+                },
+                {
+                    name: `feoche.fr`,
+                    icon: `programming`,
+                    url: `https://feoche.fr`
+                },
+                {
+                    name: `Codepen`,
+                    icon: `3d-outlined-shape`,
+                    url: `https://codepen.io/feoche`
+                }
+            ]
+        })
     }
 </script>
 
@@ -69,18 +102,70 @@
 
     .networks {
         width: 50vw;
-        margin: 0 auto;
+        margin: 0 auto 1em;
         display: flex;
         justify-content: space-around;
     }
 
-    .network img {
-        width: 10em;
-        height: 10em;
+    .network {
+        transition: all ease-in-out .1s;
+        position: relative;
+        width: 4em;
+        height: 4em;
+        margin: 0 2vw;
+    }
+
+    .network:hover, .network:focus {
+        -webkit-filter: drop-shadow(2px 2px 2px #333);
+        filter: drop-shadow(2px 2px 2px #333);
+    }
+
+    .network svg {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    #linkedin {
+        fill: #0077B5;
+    }
+
+    #linkedin:before {
+        content:'';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        background: radial-gradient(circle at center, white 65%, transparent 66%);
+        margin: auto;
+        max-width: 4em;
+        max-height: 3em;
+    }
+
+    #mail svg {
+        fill: #000;
+    }
+
+    #twitter svg {
+        fill: #55acee;
+    }
+
+    #programming svg {
+        fill: #fff;
+    }
+
+    #github svg {
+        fill: #000;
+    }
+
+    #3d-outlined-shape svg {
+        fill: #000;
     }
 
     .farewell {
-        margin: 3em 0 0;
+        margin: 5em 0 0;
     }
 
 </style>

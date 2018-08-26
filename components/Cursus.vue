@@ -38,7 +38,7 @@
 </template>
 
 <script>
-    module.exports = {
+    export default {
         data: () => {
             const duration = (date1, date2) => {
                 let d = Math.abs(moment(date1).diff((date2 || moment()), `years`, true)).toFixed(2);
@@ -61,13 +61,13 @@
                         missions: [`Web/Mobile site/Hybrid app integration`, `Corrective maintenance`, `Monitor technological developments`]
                     },
                     {
-                        job: `End-of-studies Internship<div class="cv-item_subtitle">Study and Web/Mobile site development</div>`,
+                        job: `End-of-studies Internship<div class="subtitle">Study and Web/Mobile site development</div>`,
                         date: duration('Sep. 2014', 'Mar. 2014'),
                         place: `<a href="http://niji.fr/" onclick="window.open(this.href); return false;">Niji</a>`,
                         missions: [`Integration in already-existing development teams`, `Web/Mobile site/Hybrid app integration`, `Corrective maintenance`]
                     },
                     {
-                        job: `1st year of Masters Internship<div class="cv-item_subtitle">Integrate the IT department</div>`,
+                        job: `1st year of Masters Internship<div class="subtitle">Integrate the IT department</div>`,
                         date: duration('Sep. 2013', 'Jun. 2013'),
                         missions: [`<abbr title="Extract Transform Load">ETL</abbr> of distant raw data to adapt in Rennes Métropole libraries' database system`, `Addition of rich media support in documentary notes`, `IT department`],
                         place: `<a href="http://metropole.rennes.fr/" onclick="window.open(this.href); return false;">Ville de Rennes</a>`
@@ -76,7 +76,14 @@
                 studies: [
                     {
                         date: `Sep. 2014`,
-                        job: `Masters degree Diploma<div class="cv-item_subtitle">Special emphasis on interface ergonomics and Information and Communications Technology.</div><small>With distinction</small>`,
+                        job: `Masters degree Diploma`,
+                        missions: [`Special emphasis on interface ergonomics and Information and Communications Technology.`, `With "Good" distinction`],
+                        place: "<a href=\"http://www.istic.univ-rennes1.fr/\" onclick=\"window.open(this.href); return false;\">ISTIC – University of Rennes 1</a>"
+                    },
+                    {
+                        date: `May. 2014`,
+                        job: `<a href=\"http://www.certification-cles.fr\" onclick=\"window.open(this.href); return false;\">Certificat de Compétences en Langues de l’Enseignement Supérieur</a><div class="subtitle">Level 2 diploma</div>`,
+                        missions: [`Academic equivalent of the TOEIC test`, `785+ TOEIC points`],
                         place: "<a href=\"http://www.istic.univ-rennes1.fr/\" onclick=\"window.open(this.href); return false;\">ISTIC – University of Rennes 1</a>"
                     },
 
@@ -110,7 +117,7 @@
 
     .cv-item {
         width: calc(50% - 1.6em);
-        padding: .8em 0;
+        padding: 1.2em 0;
     }
 
     @media (max-width: 800px) {
@@ -120,15 +127,7 @@
 
         .cv-item {
             width: auto;
-        }
-
-        .cv-item + .cv-item:before {
-            content: '';
-            display: block;
-            height: 1px;
-            width: 50vw;
-            margin: -.5em auto 1.2em;
-            background: radial-gradient(circle at center, white, transparent 70%);
+            padding: .8em 0;
         }
     }
 
@@ -140,10 +139,13 @@
         font-size: 1.2rem;
     }
 
-    .cv-item_subtitle {
+    .cv-item_subtitle, .subtitle {
         color: #d4d4d4;
         font-size: .8rem;
-        padding: .3em .8em;
+    }
+
+    .cv-item_subtitle {
+        padding: .3em .8em 1em;
     }
 
     .cv-item_missions {
@@ -153,5 +155,6 @@
     .cv-item_mission {
         padding: .1em;
         font-size: 1rem;
+        list-style: circle;
     }
 </style>

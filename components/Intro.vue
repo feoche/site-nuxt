@@ -21,7 +21,7 @@
                 On this website you will mostly find <a v-smooth-scroll="{duration:2000}" href="#projects">what I have
                 worked on</a> and what <a v-smooth-scroll="{duration:2000}" href="#skills">I'm fond of</a>, but
                 also <a v-smooth-scroll="{duration:2000}" href="#projects-personal">my personal projects</a> and some of
-                the <a v-smooth-scroll="{duration:2000}" href="#extra">side activities I take care of</a>.
+                the <a v-smooth-scroll="{duration:2000}" href="#extras">side activities I take care of</a>.
             </p>
             <p class="introduction-text">
                 To conclude, you will have the different ways to <a v-smooth-scroll="{duration:2000}" href="#contact">contact
@@ -32,7 +32,7 @@
 </template>
 
 <script>
-    module.exports = {
+    export default {
         data: () => {
             let duration = Math.abs(moment(`2014-03-10`).diff(moment(), `years`, true)).toFixed(2);
             const fraction = duration.split(`.`)[1];

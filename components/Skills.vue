@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    module.exports = {
+    export default {
         data: () => ({
             skills: [
                 {
@@ -106,18 +106,29 @@
     .skills-sections {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .skills-section {
         text-align: left;
-        margin: .6em 1.6em;
+        margin: .6em auto;
+        max-width: 13em;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 550px) {
         .skills-sections {
             flex-flow: column wrap;
         }
+        .skills-section {
+            margin: .6em 0;
+        }
+        .skills-section+.skills-section.skills-section {
+            padding-left: 0;
+        }
+    }
+
+    .skills-section+.skills-section {
+        padding-left: 1em;
     }
 
     .skills-section_title {
@@ -129,5 +140,9 @@
 
     .skills-section_list {
         padding-left: .2em;
+    }
+
+    .skills-section_item {
+        padding-bottom: .3em;
     }
 </style>
