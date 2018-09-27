@@ -97,7 +97,7 @@
 
     .skills-title {
         padding: .6em 0;
-        font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+        font-family: "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
         font-weight: 300;
         font-size: 1.7rem;
         letter-spacing: -.05rem;
@@ -133,9 +133,11 @@
 
     .skills-section_title {
         padding: .6em 0;
-        font-family: "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+        font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
         font-size: 1.2rem;
         letter-spacing: -.05rem;
+        transform: scaleX(.9);
+        transform-origin: left center;
     }
 
     .skills-section_list {

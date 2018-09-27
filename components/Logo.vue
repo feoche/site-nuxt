@@ -3,7 +3,7 @@
         <div class="content">
             <img class="logo-img"
                  alt="Photo of myself"
-                 src="~/static/photo.jpg">
+                 src="~/static/images/photo.jpg">
             <h1>
                 <span class="title">
                   François Eoche

@@ -44,7 +44,7 @@
                 let d = Math.abs(moment(date1).diff((date2 || moment()), `years`, true)).toFixed(2);
                 const fraction = d.split(`.`)[1];
                 d = d.split(`.`)[0];
-                return `${date2 ? date2 + ' 🠚 ' : ''}${date1}${d >= 1 ? (' — ' + d + '' + (fraction > 75 ? `¾` : fraction > 50 ? `½` : `¼`) + ' year' + (d > 1 ? 's' : '')) : ''}`;
+                return `${date2 ? date2 + ' &#10145; ' : ''}${date1}${d >= 1 ? (' — ' + d + '' + (fraction > 75 ? `¾` : fraction > 50 ? `½` : `¼`) + ' year' + (d > 1 ? 's' : '')) : ''}`;
             };
             return {
                 cursus: [
@@ -82,8 +82,8 @@
                     },
                     {
                         date: `May. 2014`,
-                        job: `<a href=\"http://www.certification-cles.fr\" onclick=\"window.open(this.href); return false;\">Certificat de Compétences en Langues de l’Enseignement Supérieur</a><div class="subtitle">Level 2 diploma</div>`,
-                        missions: [`Academic equivalent of the TOEIC test`, `785+ TOEIC points`],
+                        job: `<a href=\"http://www.certification-cles.fr\" onclick=\"window.open(this.href); return false;\">“Certificat de compétences en Langues de l’Enseignement Supérieur”</a><div class="subtitle">Level 2 diploma</div>`,
+                        missions: [`Academic equivalent of the TOEIC test`, `~785+ TOEIC points`],
                         place: "<a href=\"http://www.istic.univ-rennes1.fr/\" onclick=\"window.open(this.href); return false;\">ISTIC – University of Rennes 1</a>"
                     },
 
@@ -103,7 +103,7 @@
     .cv-title {
         text-align: center;
         padding: .6em 0;
-        font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+        font-family: "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
         font-weight: 300;
         font-size: 1.7rem;
         letter-spacing: -.05rem;
@@ -136,7 +136,10 @@
     }
 
     .cv-item_title {
+        font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
         font-size: 1.2rem;
+        transform: scaleX(.9);
+        transform-origin: left center;
     }
 
     .cv-item_subtitle, .subtitle {
