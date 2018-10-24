@@ -32,14 +32,16 @@
 </template>
 
 <script>
-    export default {
+  import { differenceInQuarters, differenceInCalendarYears } from 'date-fns'
+
+  export default {
         data: () => {
-            let duration = Math.abs(moment(`2014-03-10`).diff(moment(), `years`, true)).toFixed(2);
+            let duration = (differenceInQuarters(new Date(), '2014-03-10')/4).toFixed(2);
             const fraction = duration.split(`.`)[1];
             duration = `${duration.split(`.`)[0]}${fraction > 50 ? `¾` : fraction > 25 ? `½` : `¼`}`;
 
             return {
-                age: Math.abs(moment(`1990-09-06`).diff(moment(), `years`)) + 1,
+                age: differenceInCalendarYears(new Date(), '1990-09-06'),
                 workDuration: duration
             };
         }

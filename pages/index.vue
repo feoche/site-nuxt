@@ -13,9 +13,6 @@
 </template>
 
 <script>
-    import Vue from 'vue'
-    import vueSmoothScroll from 'vue-smooth-scroll'
-
     // Internal
     import Logo from '~/components/Logo.vue'
     import Intro from '~/components/Intro.vue'
@@ -25,8 +22,6 @@
     import Extra from '~/components/Extra.vue'
     import Contact from '~/components/Contact.vue'
     import Credits from '~/components/Credits.vue'
-
-    Vue.use(vueSmoothScroll);
 
     export default {
         components: {

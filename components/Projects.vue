@@ -6,13 +6,14 @@
                 <div class="projects-item"
                      v-for="(item, index) in projects"
                      :key="index">
-                    <div class="projects-item-hex">
+                    <div class="projects-item-hex"
+                         @click="$modal.show(item.title)">
                         <div class="projects-item_content">
                             <img class="projects-item_img"
-                                 :src="item.img">
+                                 :src="item.img[0]">
                             <img class="projects-item_img"
-                                 v-if="item.img2"
-                                 :src="item.img2">
+                                 v-if="item.img[1]"
+                                 :src="item.img[1]">
                             <div class="projects-item_content-title">
                                 <div class="projects-item_text-delimiter"></div>
                                 <h3 class="projects-item_title"
@@ -23,20 +24,40 @@
                                 </div>
                                 <div class="projects-item_text-delimiter-2"></div>
                             </div>
-                            <div class="projects-item_description" style="display: none">
-                                <div class="projects-item_text-delimiter"></div>
-                                <div class="projects-item_description_summary"
-                                     v-html="item.description"></div>
-                                <div class="projects-item_description_softs"
-                                     v-if="item.softs"
-                                     v-html="item.softs"></div>
-                                <div class="projects-item_description_with"
-                                     v-if="item.with"
-                                     v-html="item.with"></div>
-                                <div class="projects-item_text-delimiter-2"></div>
-                            </div>
                         </div>
                     </div>
+                    <modal v-bind:name="item.title">
+                        <div class="modal-container"
+                             @click="$modal.hide(item.title)">
+                            <div class="modal-content">
+                                <h3 class="projects-modal_title"
+                                    v-html="item.title"></h3>
+                                <em class="projects-modal_subtitle"
+                                    v-html="item.date"></em>
+                                <div class="projects-modal_images">
+                                    <img class="projects-modal_img"
+                                         :src="item.img[0]">
+                                    <img class="projects-modal_img"
+                                         v-if="item.img[1]"
+                                         :src="item.img[1]">
+                                    <img class="projects-modal_img"
+                                         v-if="item.img[2]"
+                                         :src="item.img[2]">
+                                </div>
+                                <div class="projects-modal_description">
+                                    <div class="projects-modal_description_summary"
+                                         v-html="item.description"></div>
+                                    <div class="projects-modal_description_keywords"
+                                         v-if="item.keywords">
+                                        <small class="projects-modal_description_keyword"
+                                               v-for="(keyword, index) in item.keywords"
+                                               :key="index"
+                                               v-html="keyword"></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </modal>
                 </div>
             </div>
         </div>
@@ -44,146 +65,156 @@
 </template>
 
 <script>
+  import { differenceInQuarters, format } from "date-fns";
+
   export default {
-    data: () => ({
-      showDetail: [],
-      projects: [
-        {
-          "title": "CableVision<br><em>Optimum</em>",
-          "img": require("~/static/images/projets/optimum.jpg"),
-          "img2": require("~/static/images/projets/optimum-2.jpg"),
-          "link": "http://www.optimum.com/",
-          "alt": "CableVision—Optimum",
-          "description": "Responsive website presenting TV, mobile pre-paid and Internet services of the american company",
-          "date": "December 2015<br>February 2016"
-        },
-        {
-          "title": "Ionic<br><em>The Hybrid Theory</em>",
-          "img": require("~/static/images/projets/ionicthehybridtheory.jpg"),
-          "link": "http://slides.com/feoche/ionic-the-hybrid-theory",
-          "alt": "Ionic—The Hybrid Theory",
-          "description": "Lecture about experience feedback regarding hybrid development in 2015, which took place at <a href=\"http://rennesjs.org\" target= \"_blank\">RennesJS</a>",
-          "date": "December 2015"
-        },
-        {
-          "title": "Aon<br><em>Aon Auto</em>",
-          "img": require("~/static/images/projets/aonauto.jpg"),
-          "img2": require("~/static/images/projets/aonauto-2.jpg"),
-          "link": "https://www.aonassurances.com/Particuliers/Assurance/Gamme_auto/Auto_classique",
-          "alt": "Aon Auto—Mobile App",
-          "description": "Hybrid app on iOS/Android for insurance handling on vehicule fleets",
-          "softs": "HTML5, CSS3, Sass/Compass, AngularJS, ES2015, Cordova, Ionic, Javascript, jQuery, JSON, Webservices",
-          "date": "Novembre - Décembre 2015"
-        },
-        {
-          "title": "Virgin Mobile<br><em>eBoutique</em>",
-          "img": require("~/static/images/projets/virginmobile.jpg"),
-          "img2": require("~/static/images/projets/virginmobile-2.jpg"),
-          "link": "http://virginmobile.fr",
-          "alt": "Virgin Mobile—eBoutique",
-          "description": "eShop presenting phone, mobile pre-paid and Internet services with order funnel",
-          "softs": "PHP, Symfony/Twig, Sass/Compass, Javascript, AngularJS",
-          "date": "June - November 2015"
-        },
-        {
-          "title": "ERDF<br><em>A mes côtés</em>",
-          "img": require("~/static/images/projets/amescotes.jpg"),
-          "img2": require("~/static/images/projets/amescotes-2.jpg"),
-          "link": "https://itunes.apple.com/fr/app/a-mes-cotes/id885458976?mt=8",
-          "alt": "ERDF—A mes côtés",
-          "description": "Hybrid app for iOS, Android and Windows Phone displaying access to self-diagnostic in case of power outage, risk prevention and contact infos",
-          "softs": "HTML5, CSS3, Sass/Compass, AngularJS, Cordova, Ionic, Javascript, jQuery, JSON, Webservices",
-          "date": "April - June 2015"
-        },
-        {
-          "title": "Natixis<br><em>Rouler Serein</em>",
-          "img": require("~/static/images/projets/roulerserein.jpg"),
-          "img2": require("~/static/images/projets/roulerserein-2.jpg"),
-          "link": "https://itunes.apple.com/fr/app/rouler-serein/id547607719?mt=8",
-          "alt": "Natixis—Rouler Serein",
-          "description": "Hybrid app for iOS and Android suggesting insurance simulation, insurance claim and customer service for customer vehicles",
-          "softs": "HTML5, CSS3, Sass/Compass, AngularJS, Cordova, Ionic, Javascript, jQuery, JSON, Webservices",
-          "date": "January - April 2015"
-        },
-        {
-          "title": "Edelia<br><em>Showcase site</em>",
-          "img": require("~/static/images/projets/edelia.jpg"),
-          "img2": require("~/static/images/projets/edelia-2.jpg"),
-          "link": "http://www.edelia.fr/",
-          "alt": "Edelia—Showcase site",
-          "description": "Responsive website displaying Edelia professional offers for energy",
-          "softs": "Drupal7, PHP5, HTML5, Sass/Compass, Javascript, jQuery, RWD",
-          "date": "December 2014"
-        },
-        {
-          "title": "Bouygues Telecom<br><em>B.tv - Chromecast</em>",
-          "img": require("~/static/images/projets/btv.jpg"),
-          "img2": require("~/static/images/projets/btv-2.jpg"),
-          "link": "http://www.services.bouyguestelecom.fr/television/services-tv/b-tv",
-          "alt": "Bouygues Telecom—B.tv - Chromecast",
-          "description": "Chromecast app linked to the BBox (Bouygues Telecom) in order to display compatible TV channels/replays",
-          "softs": "HTML5, CSS3, Javascript, Google Cast SDK",
-          "date": "October - November 2014"
-        },
-        {
-          "title": "Femmes de Bretagne<br><em>Social network</em>",
-          "img": require("~/static/images/projets/femmesBretagne.jpg"),
-          "link": "http://femmesdebretagne.fr",
-          "alt": "Site Web Femmes de Bretagne",
-          "description": "Social network creation project for women entrepreneurs in Brittany",
-          "softs": "Drupal7, PHP5, HTML5, Sass/Compass, Javascript, jQuery, Webservices, RWD",
-          "date": "August - November 2014"
-        },
-        {
-          "title": "Banque Populaire<br><em>Showcase mobile site</em>",
-          "img": require("~/static/images/projets/bpSiteMobile.jpg"),
-          "img2": require("~/static/images/projets/bpSiteMobile-2.jpg"),
-          "link": "http://mobile.banquepopulaire.fr",
-          "alt": "Banque Populaire—Showcase mobile site",
-          "description": "Responsive mobile website presenting Banque Populaire offers — related to the desktop website",
-          "softs": "Drupal7, PHP5, HTML5, Sass/Compass, Javascript, jQuery, Webservices, RWD",
-          "date": "April - October 2014"
-        },
-        {
-          "title": "Bibliothèque de Rennes Métropole<br><em>Encore catalog</em>",
-          "img": require("~/static/images/projets/lesChampsLibres.jpg"),
-          "link": "http://opac.si.leschampslibres.fr/",
-          "alt": "Bibliothèque de Rennes Métropole—Encore catalog",
-          "description": "Enhancement of documentary notes into the web catalog of Rennes Métropole libraries <a href=\"http://opac.si.leschampslibres.fr\" target= \"_blank\">(Encore)</a> thanks to enriched content coming from <a href=\"http://www.babelio.com\" target= \"_blank\">Babelio</a> database",
-          "softs": "HTML5, CSS3, Javascript, jQuery",
-          "date": "Août 2013"
-        },
-        {
-          "title": "Master 2<br><em>Android app : OuSuij</em>",
-          "img": require("~/static/images/projets/ousuij.jpg"),
-          "alt": "Master 2—Android app : OuSuij",
-          "description": "Creation of an Android app/game based on Google Maps and Google Street View APIs (vaguely similar to <a href=\"https://geoguessr.com\" target= \"_blank\">GeoGuessr</a> game)",
-          "softs": "Android, Java, XML, HTML5, Javascript, jQuery",
-          "date": "First semester of 2014"
-        },
-        {
-          "title": "Master 1 dissertation<br><em>Touchscreens</em>",
-          "img": require("~/static/images/projets/tactile.jpg"),
-          "alt": "Master 1 dissertation—Touchscreens",
-          "description": "Presentation of a report summarizing the numerous usages around new tech in touchscreen scale",
-          "date": "Second semester of 2013"
-        },
-        {
-          "title": "Master 1<br><em>&lt;IMG++&gt; project</em>",
-          "img": require("~/static/images/projets/imgpp.jpg"),
-          "alt": "Master 1—&lt;IMG++&gt; project",
-          "description": "Creation of a special HTML5-compatible tag that can handle \"enhanced\" pictures (HDR format, panoramas, 3D, etc.)",
-          "softs": "HTML5, CSS3, WebGL, Javascript, jQuery",
-          "date": "2012 - 2013"
+    data: () => {
+      const displayShortDate = (date) => format(date, "MMMM");
+      const displayDate = (date) => format(date, "MMMM YYYY");
+      const duration = (date1, date2 = null, separator = `—`) => {
+        let res = ``;
+        let d = Math.abs(differenceInQuarters(date2 || new Date(), date1) / 4).toFixed(2);
+        const fraction = d.split(`.`)[1];
+        let years = d.split(`.`)[0];
+        if (date2) {
+          res = `${date1.getFullYear() === date2.getFullYear() ? displayShortDate(date2) : displayDate(date2)} ${separator} ${displayDate(date1)}`;
+        } else {
+          res = `${displayDate(date1)}`;
         }
-      ]
-    })
-  }
+        console.info("years : ", d);
+        return res;
+      };
+      return {
+        projects: [
+          {
+            "title": "CableVision<br><em>Optimum</em>",
+            "img": [require("~/static/images/projets/optimum.jpg"), require("~/static/images/projets/optimum-2.jpg")],
+            "link": "http://www.optimum.com/",
+            "alt": "CableVision—Optimum",
+            "description": "Responsive website presenting TV, mobile pre-paid and Internet services of the american company",
+            "date": duration(new Date(2016, 1, 2), new Date(2015, 11, 2), `<br>`)
+          },
+          {
+            "title": "Ionic<br><em>The Hybrid Theory</em>",
+            "img": [require("~/static/images/projets/ionicthehybridtheory.jpg")],
+            "link": "http://slides.com/feoche/ionic-the-hybrid-theory",
+            "alt": "Ionic—The Hybrid Theory",
+            "description": "Lecture about experience feedback regarding hybrid development in 2015, which took place at <a href=\"http://rennesjs.org\" target= \"_blank\">RennesJS</a>",
+            "date": duration(new Date(2015, 11, 2), null, `<br>`)
+          },
+          {
+            "title": "Aon<br><em>Aon Auto</em>",
+            "img": [require("~/static/images/projets/aonauto.jpg"), require("~/static/images/projets/aonauto-2.jpg")],
+            "link": "https://www.aonassurances.com/Particuliers/Assurance/Gamme_auto/Auto_classique",
+            "alt": "Aon Auto—Mobile App",
+            "description": "Hybrid app on iOS/Android for insurance handling on vehicule fleets",
+            "keywords": ["HTML5", "CSS3", "Sass/Compass", "AngularJS", "ES2015", "Cordova", "Ionic", "Javascript", "jQuery", "JSON", "Webservices"],
+            "date": duration(new Date(2015, 11, 2), new Date(2015, 10, 2), `<br>`)
+          },
+          {
+            "title": "Virgin Mobile<br><em>eBoutique</em>",
+            "img": [require("~/static/images/projets/virginmobile.jpg"), require("~/static/images/projets/virginmobile-2.jpg")],
+            "link": "http://virginmobile.fr",
+            "alt": "Virgin Mobile—eBoutique",
+            "description": "eShop presenting phone, mobile pre-paid and Internet services with order funnel",
+            "keywords": ["PHP", "Symfony/Twig", "Sass/Compass", "Javascript", "AngularJS"],
+            "date": duration(new Date(2015, 10, 2), new Date(2015, 5, 2), `<br>`)
+          },
+          {
+            "title": "ERDF<br><em>A mes côtés</em>",
+            "img": [require("~/static/images/projets/amescotes.jpg"), require("~/static/images/projets/amescotes-2.jpg")],
+            "link": "https://itunes.apple.com/fr/app/a-mes-cotes/id885458976?mt=8",
+            "alt": "ERDF—A mes côtés",
+            "description": "Hybrid app for iOS, Android and Windows Phone displaying access to self-diagnostic in case of power outage, risk prevention and contact infos",
+            "keywords": ["HTML5", "CSS3", "Sass/Compass", "AngularJS", "Cordova", "Ionic", "Javascript", "jQuery", "JSON", "Webservices"],
+            "date": duration(new Date(2015, 5, 2), new Date(2015, 3, 2), `<br>`)
+          },
+          {
+            "title": "Natixis<br><em>Rouler Serein</em>",
+            "img": [require("~/static/images/projets/roulerserein.jpg"), require("~/static/images/projets/roulerserein-2.jpg")],
+            "link": "https://itunes.apple.com/fr/app/rouler-serein/id547607719?mt=8",
+            "alt": "Natixis—Rouler Serein",
+            "description": "Hybrid app for iOS and Android suggesting insurance simulation, insurance claim and customer service for customer vehicles",
+            "keywords": ["HTML5", "CSS3", "Sass/Compass", "AngularJS", "Cordova", "Ionic", "Javascript", "jQuery", "JSON", "Webservices"],
+            "date": duration(new Date(2015, 4, 2), new Date(2015, 0, 2), `<br>`)
+          },
+          {
+            "title": "Edelia<br><em>Showcase site</em>",
+            "img": [require("~/static/images/projets/edelia.jpg"), require("~/static/images/projets/edelia-2.jpg")],
+            "link": "http://www.edelia.fr/",
+            "alt": "Edelia—Showcase site",
+            "description": "Responsive website displaying Edelia professional offers for energy",
+            "keywords": ["Drupal7", "PHP5", "HTML5", "Sass/Compass", "Javascript", "jQuery", "RWD"],
+            "date": duration(new Date(2014, 11, 2), null, `<br>`)
+          },
+          {
+            "title": "Bouygues Telecom<br><em>B.tv - Chromecast</em>",
+            "img": [require("~/static/images/projets/btv.jpg"), require("~/static/images/projets/btv-2.jpg")],
+            "link": "http://www.services.bouyguestelecom.fr/television/services-tv/b-tv",
+            "alt": "Bouygues Telecom—B.tv - Chromecast",
+            "description": "Chromecast app linked to the BBox (Bouygues Telecom) in order to display compatible TV channels/replays",
+            "keywords": ["HTML5", "CSS3", "Javascript", "Google Cast SDK"],
+            "date": duration(new Date(2014, 10, 2), new Date(2014, 9, 2), `<br>`)
+          },
+          {
+            "title": "Femmes de Bretagne<br><em>Social network</em>",
+            "img": [require("~/static/images/projets/femmesBretagne.jpg")],
+            "link": "http://femmesdebretagne.fr",
+            "alt": "Site Web Femmes de Bretagne",
+            "description": "Social network creation project for women entrepreneurs in Brittany",
+            "keywords": ["Drupal7", "PHP5", "HTML5", "Sass/Compass", "Javascript", "jQuery", "Webservices", "RWD"],
+            "date": duration(new Date(2014, 10, 2), new Date(2014, 7, 2), `<br>`)
+          },
+          {
+            "title": "Banque Populaire<br><em>Showcase mobile site</em>",
+            "img": [require("~/static/images/projets/bpSiteMobile.jpg"), require("~/static/images/projets/bpSiteMobile-2.jpg")],
+            "link": "http://mobile.banquepopulaire.fr",
+            "alt": "Banque Populaire—Showcase mobile site",
+            "description": "Responsive mobile website presenting Banque Populaire offers — related to the desktop website",
+            "keywords": ["Drupal7", "PHP5", "HTML5", "Sass/Compass", "Javascript", "jQuery", "Webservices", "RWD"],
+            "date": duration(new Date(2014, 9, 2), new Date(2014, 3, 2), `<br>`)
+          },
+          {
+            "title": "Bibliothèque de Rennes Métropole<br><em>Encore catalog</em>",
+            "img": [require("~/static/images/projets/lesChampsLibres.jpg")],
+            "link": "http://opac.si.leschampslibres.fr/",
+            "alt": "Bibliothèque de Rennes Métropole—Encore catalog",
+            "description": "Enhancement of documentary notes into the web catalog of Rennes Métropole libraries <a href=\"http://opac.si.leschampslibres.fr\" target= \"_blank\">(Encore)</a> thanks to enriched content coming from <a href=\"http://www.babelio.com\" target= \"_blank\">Babelio</a> database",
+            "keywords": ["HTML5", "CSS3", "Javascript", "jQuery"],
+            "date": duration(new Date(2013, 7, 2), null, `<br>`)
+          },
+          {
+            "title": "Master 2<br><em>Android app : OuSuij</em>",
+            "img": [require("~/static/images/projets/ousuij.jpg")],
+            "alt": "Master 2—Android app : OuSuij",
+            "description": "Creation of an Android app/game based on Google Maps and Google Street View APIs (vaguely similar to <a href=\"https://geoguessr.com\" target= \"_blank\">GeoGuessr</a> game)",
+            "keywords": ["Android", "Java", "XML", "HTML5", "Javascript", "jQuery"],
+            "date": duration(new Date(2013, 11, 2), new Date(2013, 8, 2), `<br>`)
+          },
+          {
+            "title": "Master 1 dissertation<br><em>Touchscreens</em>",
+            "img": [require("~/static/images/projets/tactile.jpg")],
+            "alt": "Master 1 dissertation—Touchscreens",
+            "description": "Presentation of a report summarizing the numerous usages around new tech in touchscreen scale",
+            "date": duration(new Date(2014, 5, 2), new Date(2014, 0, 2), `<br>`)
+          },
+          {
+            "title": "Master 1<br><em>&lt;IMG++&gt; project</em>",
+            "img": [require("~/static/images/projets/imgpp.jpg")],
+            "alt": "Master 1—&lt;IMG++&gt; project",
+            "description": "Creation of a special HTML5-compatible tag that can handle \"enhanced\" pictures (HDR format, panoramas, 3D, etc.)",
+            "keywords": ["HTML5", "CSS3", "WebGL", "Javascript", "jQuery"],
+            "date": duration(new Date(2013, 4, 2), new Date(2012, 8, 2), `<br>`)
+          }
+        ]
+      };
+    }
+  };
 </script>
 
 <style scoped>
     #projects .content {
-        width: 100vw;
+        width: 99vw;
     }
 
     @media (max-width: 1200px) {
@@ -231,8 +262,19 @@
     }
 
     @media (max-width: 1200px) {
-        .projects-item:nth-child(n+6) {margin-top: 0;}.projects-item:nth-child(9n+6) {margin-left: .2em;} .projects-item:nth-child(9n+9) {margin-right: .2em;} /*RESET*/
+        .projects-item:nth-child(n+6) {
+            margin-top: 0;
+        }
 
+        .projects-item:nth-child(9n+6) {
+            margin-left: .2em;
+        }
+
+        .projects-item:nth-child(9n+9) {
+            margin-right: .2em;
+        }
+
+        /*RESET*/
         .projects-item:nth-child(n+4) {
             margin-top: -6.7vw;
         }
@@ -250,7 +292,6 @@
             margin-left: 0;
         }
     }
-
 
     .projects-item * {
         position: absolute;
@@ -314,7 +355,7 @@
         align-content: space-between;
         flex-flow: row wrap;
         justify-content: center;
-        background: rgba(255,255,255,.9);
+        background: rgba(255, 255, 255, .9);
         opacity: 0;
         cursor: pointer;
     }
@@ -364,25 +405,97 @@
     }
 
     .projects-item_title {
+        width: 100%;
+        font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+        letter-spacing: -.1rem;
         font-size: 1.4vw;
         padding: 0 .2vw;
     }
 
     .projects-item_subtitle {
         font-size: 1.2vw;
+        font-family: "MarkProLight", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+        letter-spacing: -.1rem;
     }
 
-    .projects-item_description {
-        display: flex;
+    .modal-container {
+        position: fixed;
+        box-sizing: border-box;
+        overflow: hidden;
+        left: 0;
+        top: 0;
         width: 100%;
-        height: 100%;
-        align-content: space-between;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 999;
+        opacity: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-container * {
+        position: relative;
+    }
+
+    .modal-content {
+        position: relative;
+        max-width: 60vw;
+        max-height: 80vh;
+        padding: 5vh 5vw;
+        background: white;
+        display: flex;
+        flex-flow: column wrap;
+        box-shadow: 0 3px 10px dimgray;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 1200px) {
+        .modal-content {
+            max-width: 80vw;
+        }
+    }
+
+    .projects-modal_title {
+        font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+        letter-spacing: -.1rem;
+        font-size: 1.4vw;
+        padding: 0 .2vw;
+    }
+
+    .projects-modal_images {
+        display: flex;
+        margin: 2vh auto;
+        flex-flow: row;
+        justify-content: center;
+    }
+
+    .projects-modal_img {
+        min-width: 30vh;
+        max-height: 30vh;
+        margin: 1em;
+    }
+
+    .projects-modal_description {
+
+    }
+
+    .projects-modal_description_summary {
+
+    }
+
+    .projects-modal_description_keywords {
+        margin: 1em 1em 0;
+        display: flex;
         flex-flow: row wrap;
         justify-content: center;
     }
 
-    .projects-item_description * {
-        position: relative;
+    .projects-modal_description_keyword {
+        margin: .1em .2em;
+        padding: 0 .5em;
+        border-radius: 5px;
+        background: lightgray;
     }
 
 </style>

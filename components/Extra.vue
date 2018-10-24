@@ -22,35 +22,46 @@
 </template>
 
 <script>
-    export default {
-        data: () => {
-            const duration = (date1, date2) => {
-                let d = Math.abs(moment(date1).diff((date2 || moment()), `years`, true)).toFixed(2);
-                const fraction = d.split(`.`)[1];
-                d = d.split(`.`)[0];
-                return `${date2 ? date2 + ' 🠚 ' : ''}${date1}${d >= 1 ? (' — ' + d + '' + (fraction > 75 ? `¾` : fraction > 50 ? `½` : `¼`) + ' year' + (d > 1 ? 's' : '')) : ''}`;
-            };
-            return {
-                extras: [
-                    {
-                        job: `<a href="https://rennesjs.org" onclick="window.open(this.href); return false;">RennesJS</a> Staff`,
-                        date: `Since ${duration('Aug. 2017')}`,
-                        missions: [`Meetup organization`, `In touch with <a href="http://lafrenchtech-rennes.fr" onclick="window.open(this.href); return false;">French Tech</a>`, `Monitor technological developments`]
-                    },
-                    {
-                        job: `<a href="https://indieco.xyz" onclick="window.open(this.href); return false;">Indie Collective</a> Secretary`,
-                        date: `Since ${duration('Apr. 2017')}`,
-                        missions: [`<a href="https://stunfest.com/" onclick="window.open(this.href); return false;">Stunfest</a> main staff`, `Game Jams organizer`, `Weekly meetup host`]
-                    },
-                    {
-                        job: `<a href="https://speedrennes.com" onclick="window.open(this.href); return false;">SpeedRennes</a> Founder`,
-                        date: `Since ${duration('Jan. 2017')}`,
-                        missions: [`Game speedrun commentary host`, `Conferences about speedrun organizer`]
-                    }
-                ]
-            }
+  import { format, differenceInQuarters } from "date-fns";
+
+  export default {
+    data: () => {
+      const displayShortDate = (date) => format(date, "MMM.");
+      const displayDate = (date) => format(date, "MMM. YYYY");
+      const duration = (date1, date2 = null, separator = `➡`) => {
+        let res = ``;
+        let d = Math.abs(differenceInQuarters(date2 || new Date(), date1) / 4).toFixed(2);
+        const fraction = d.split(`.`)[1];
+        let years = d.split(`.`)[0];
+        if (date2) {
+          res = `${date1.getFullYear() === date2.getFullYear() ? displayShortDate(date2) : displayDate(date2)} ${separator} ${displayDate(date1)}`;
+        } else {
+          res = `Since ${displayDate(date1)}`;
         }
+        console.info("years : ", d);
+        return res + `${d >= 1 ? (" — " + years + "" + (fraction > 75 ? `¾` : fraction > 50 ? `½` : `¼`) + " year" + (years > 1 ? "s" : "")) : ""}`;
+      };
+      return {
+        extras: [
+          {
+            job: `<a href="https://rennesjs.org" onclick="window.open(this.href); return false;">RennesJS</a> Staff`,
+            date: duration(new Date(2017, 7, 2)),
+            missions: [`Meetup organization`, `In touch with <a href="http://lafrenchtech-rennes.fr" onclick="window.open(this.href); return false;">French Tech</a>`, `Monitor technological developments`]
+          },
+          {
+            job: `<a href="https://indieco.xyz" onclick="window.open(this.href); return false;">Indie Collective</a> Secretary`,
+            date: duration(new Date(2017, 3, 2)),
+            missions: [`<a href="https://stunfest.com/" onclick="window.open(this.href); return false;">Stunfest</a> main staff`, `Game Jams organizer`, `Weekly meetup host`]
+          },
+          {
+            job: `<a href="https://speedrennes.com" onclick="window.open(this.href); return false;">SpeedRennes</a> Founder`,
+            date: duration(new Date(2017, 0, 2)),
+            missions: [`Game speedrun commentary host`, `Conferences about speedrun organizer`]
+          }
+        ]
+      };
     }
+  };
 </script>
 
 <style scoped>

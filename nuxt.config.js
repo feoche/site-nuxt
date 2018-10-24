@@ -9,9 +9,6 @@ module.exports = {
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {hid: 'description', name: 'description', content: 'Francois Eoche - UX Developer'}
     ],
-    script: [{
-      src: 'https://momentjs.com/downloads/moment.min.js'
-    }],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: 'images/favicon.ico'}
     ]
@@ -21,10 +18,12 @@ module.exports = {
   */
   loading: {color: '#3B8070'},
   css: [
-    '~/assets/fonts/MarkProLight.css',
-    '~/assets/fonts/MarkProMedium.css',
-    '~/assets/fonts/MarkProBold.css'
+    '~assets/fonts/MarkProLight.css',
+    '~assets/fonts/MarkProMedium.css',
+    '~assets/fonts/MarkProBold.css',
+    '~assets/fonts/MarkProBold.css'
   ],
+  plugins: ['~plugins/vue-js-plugins'],
   /*
   ** Build configuration
   */
