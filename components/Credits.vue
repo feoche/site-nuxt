@@ -6,7 +6,6 @@
 
 <style scoped>
     #credits {
-        font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
         padding: .8em 0;
         font-size: .8rem;
     }

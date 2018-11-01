@@ -115,6 +115,10 @@
         max-width: 13em;
     }
 
+    .skills-section_title {
+        padding-bottom: .8em;
+    }
+
     @media (max-width: 550px) {
         .skills-sections {
             flex-flow: column wrap;

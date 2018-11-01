@@ -33,15 +33,14 @@
         display: block;
         font-weight: 300;
         font-size: 4rem;
-        color: #1b2e3e;
-        letter-spacing: -.3rem;
+        letter-spacing: -.2rem;
     }
 
     .subtitle {
         font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
         font-weight: 300;
         font-size: 2rem;
-        color: #233a4f;
+        font-style: normal;
         letter-spacing: -.1rem;
     }
 </style>

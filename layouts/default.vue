@@ -1,7 +1,8 @@
 <template><nuxt/></template>
 <style>
     html {
-        font-family: "Lato", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #000;
+        font-family: "BoosterNextFY-Medium", Roboto, "Helvetica Neue", Arial, sans-serif;
         font-size: 1.2rem;
         word-spacing: .1rem;
         -ms-text-size-adjust: 100%;
@@ -14,10 +15,6 @@
     *, *:before, *:after {
         box-sizing: border-box;
         margin: 0;
-    }
-
-    a {
-        color: #0075d5;
     }
 
     abbr {

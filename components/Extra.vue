@@ -7,8 +7,9 @@
                      v-for="(item, index) in extras"
                      :key="index">
                     <h3 class="extra-item_title" v-html="item.job"></h3>
-                    <div class="extra-item_subtitle"><span class="extra-item_place" v-html="item.place"></span><em><span
-                            class="extra-item_date" v-html="item.date"></span></em></div>
+                    <div class="extra-item_subtitle"><span class="extra-item_place" v-html="item.place"></span>
+                        <span class="extra-item_date" v-html="item.date"></span>
+                    </div>
                     <ul class="extra-item_missions">
                         <li class="extra-item_mission"
                             v-for="(mission, index) in item.missions"

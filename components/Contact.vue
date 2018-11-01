@@ -91,7 +91,6 @@
         font-size: 1.7rem;
         letter-spacing: -.05rem;
     }
-
     .contact-text {
         padding: .8em 0 1em;
     }
@@ -111,7 +110,7 @@
         margin: 0 2vw;
     }
 
-    .network:hover, .network:focus {
+    .network:hover svg, .network:focus svg {
         -webkit-filter: drop-shadow(2px 2px 2px #333);
         filter: drop-shadow(2px 2px 2px #333);
     }
@@ -120,10 +119,12 @@
         position: relative;
         max-width: 100%;
         max-height: 100%;
+        -webkit-filter: drop-shadow(0px 0px 1px #333);
+        filter: drop-shadow(0px 0px 1px #333);
     }
 
-    #linkedin {
-        fill: #0077B5;
+    #linkedin svg {
+        fill: #0077B5 !important;
     }
 
     #linkedin:before {
@@ -140,25 +141,10 @@
         max-height: 3em;
     }
 
-    #mail svg {
-        fill: #000;
-    }
-
     #twitter svg {
-        fill: #55acee;
+        fill: #55acee !important;
     }
 
-    #programming svg {
-        fill: #fff;
-    }
-
-    #github svg {
-        fill: #000;
-    }
-
-    #3d-outlined-shape svg {
-        fill: #000;
-    }
 
     .farewell {
         margin: 5em 0 0;

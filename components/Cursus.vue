@@ -23,8 +23,10 @@
                      v-for="(item, index) in studies"
                      :key="index">
                     <h3 class="cv-item_title" v-html="item.job"></h3>
-                    <div class="cv-item_subtitle"><span class="cv-item_place" v-html="item.place"></span><em>&nbsp;&mdash;&nbsp;<span
-                            class="cv-item_date" v-html="item.date"></span></em></div>
+                    <div class="cv-item_subtitle">
+                        <span class="cv-item_place" v-html="item.place"></span>&nbsp;&mdash;&nbsp;<span
+                            class="cv-item_date" v-html="item.date"></span>
+                    </div>
                     <ul class="cv-item_missions">
                         <li class="cv-item_mission"
                             v-for="(mission, index) in item.missions"

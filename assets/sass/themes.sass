@@ -1,68 +1,73 @@
+@function text-contrast($n)
+  $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000)
+  $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000)
+
+  @if abs($color-brightness) < ($light-color/2)
+    @return "false"
+  @else
+    @return "true"
+
+
 =set-color($color)
-  @if lightness($color) > 50
-    color: #000000
+  background: $color
+  @if text-contrast($color) == "true"
+    color: #000
+    a
+      color: #004d8f
+    svg
+      fill: #000
   @else
     color: #ffffff
+    a
+      color: #a6c3ff
+    svg
+      fill: #fff
 
-=theme($color1, $color2, $color3, $color4, $color5)
-  #logo
-    background: $color1
-    +set-color($color1)
+=theme($num, $color1, $color2, $color3, $color4, $color5)
+  .theme-#{$num}
+    #logo
+      +set-color($color1)
 
-  #cv
-    background: $color2
-    +set-color($color2)
+    #cv
+      +set-color($color2)
 
-  #projects
-    background: $color3
-    +set-color($color3)
+    #projects
+      +set-color($color3)
 
-  #extras
-    background: $color4
-    +set-color($color4)
+    #extras
+      +set-color($color4)
 
-  #contact
-    background: $color5
-    +set-color($color5)
+    #contact
+      +set-color($color5)
 
-+theme(#2abfb8, #354458, #b9d2ff, #ffe39e, #eb7260)
-+theme(#231330, #243254, #20555e, #2d7a5a, #408f51)
-+theme(#8b0a80, #7144a8, #467bc4, #20b7e2, #00ebfa)
-+theme(#7c6743, #ffea7c, #ffe6bf, #9fd5ff, #7fc7ff)
-+theme(#353536, #615aa2, #8e80c4, #c8a9e3, #e2ebe3)
-+theme(#d6f6b5, #a9e899, #44a682, #467d7f, #376d6d)
-+theme(#e7839c, #fbb2ba, #ffeced, #e5e8e6, #c7d2cc)
-+theme(#ffe2e7, #e5b4c1, #8697c2, #91a7ec, #c5cffc)
-+theme(#ffe153, #ffbc68, #f18e85, #c56d9d, #9967a4)
-+theme(#9297a0, #afb2b7, #d1d4cb, #fbfdfc, #f7debf)
-+theme(#703034, #e07761, #fac78d, #f8e8a3, #86ddb3)
-+theme(#daedf6, #e7ba62, #bd7d32, #98603e, #5a2c1e)
-+theme(#211103, #3d1308, #7b0d1e, #9f2042, #fef2e3)
-+theme(#6eff5a, #beff5a, #fff558, #fdbc56, #ff8e52)
-+theme(#e9f3ab, #c1cd73, #c19b73, #c35f81, #b42e86)
-+theme(#faffd6, #cbf5af, #b0e1a2, #ffa1b3, #ff839b)
-+theme(#4b6e69, #417f59, #5e9558, #88c466, #c7e391)
-+theme(#a49bb9, #ddd5db, #f3f0f6, #ffe0c8, #ffbbb0)
-+theme(#8fffda, #6ebfe3, #4c80ed, #2b40f6, #0900ff)
-+theme(#cff19e, #a8dba8, #79bd9a, #3b8686, #0b486b)
-+theme(#806196, #907f9f, #a4a5ae, #b0c7bd, #b8ebd0)
-+theme(#fa055f, #d74474, #b48289, #90c19e, #6dffb3)
-+theme(#a492fb, #bdb0fd, #d0c6fd, #ffeca0, #fee160)
-+theme(#f8fcdc, #f6bfc4, #f09aad, #b5e0f3, #87a9d8)
-+theme(#a8f9ff, #903143, #9ae5e6, #81a094, #32151f)
-+theme(#f6f2ff, #dcccff, #e07be0, #932f6d, #420039)
-+theme(#ffeccc, #f2d0a4, #f95d5c, #a4303f, #870058)
-+theme(#b1d490, #79b4a9, #676f54, #474935, #3e2a35)
-+theme(#fff0b8, #f69d5c, #ed82b7, #cc6352, #861657)
-+theme(#f3e37c, #f1a66a, #f26157, #a54657, #582630)
-+theme(#f4f4f4, #f6e4f6, #f6bdd1, #c98986, #8b575c)
-+theme(#f7ddd3, #fcc449, #f38245, #bc2c43, #6f0000)
-+theme(#f9f9b6, #fbfc75, #4f86c6, #0471a6, #2d0000)
-+theme(#36f1cd, #39a0ed, #13c4a3, #4c6085, #32322c)
-+theme(#c9ffbb, #affc41, #1dd3b0, #0471a6, #3c1642)
-+theme(#ffaca3, #f84aa7, #a74482, #693668, #1b1b3a)
-+theme(#fcd7d3, #e39695, #df7373, #b42e2b, #750000)
-+theme(#d6f4f6, #f58ef9, #1dd3b0, #7e4f6f, #004834)
-+theme(#ffdf7f, #ff9528, #d85c00, #720e07, #45050c)
-+theme(#d9fced, #00cfa2, #007964, #77305e, #600020)
-+theme(#f1e8b8, #f9e784, #e58f65, #ff3864, #48001d)
++theme(0, #2abfb8, #354458, #b9d2ff, #ffe39e, #eb7260)
++theme(1, #231330, #243254, #20555e, #2d7a5a, #408f51)
++theme(2, #7c6743, #ffea7c, #ffe6bf, #9fd5ff, #7fc7ff)
++theme(3, #353536, #615aa2, #8e80c4, #c8a9e3, #e2ebe3)
++theme(4, #d6f6b5, #a9e899, #44a682, #467d7f, #376d6d)
++theme(5, #ffe153, #ffbc68, #f18e85, #c56d9d, #9967a4)
++theme(6, #9297a0, #afb2b7, #d1d4cb, #fbfdfc, #f7debf)
++theme(7, #703034, #e07761, #fac78d, #f8e8a3, #86ddb3)
++theme(8, #daedf6, #e7ba62, #bd7d32, #98603e, #5a2c1e)
++theme(9, #211103, #3d1308, #7b0d1e, #9f2042, #fef2e3)
++theme(10, #6eff5a, #beff5a, #fff558, #fdbc56, #ff8e52)
++theme(11, #faffd6, #cbf5af, #b0e1a2, #ffa1b3, #ff839b)
++theme(12, #4b6e69, #417f59, #5e9558, #88c466, #c7e391)
++theme(13, #a49bb9, #ddd5db, #f3f0f6, #ffe0c8, #ffbbb0)
++theme(14, #cff19e, #a8dba8, #79bd9a, #3b8686, #0b486b)
++theme(15, #806196, #907f9f, #a4a5ae, #b0c7bd, #b8ebd0)
++theme(16, #a492fb, #bdb0fd, #d0c6fd, #ffeca0, #fee160)
++theme(17, #f8fcdc, #f6bfc4, #f09aad, #b5e0f3, #87a9d8)
++theme(18, #a8f9ff, #903143, #9ae5e6, #81a094, #32151f)
++theme(19, #f6f2ff, #dcccff, #e07be0, #932f6d, #420039)
++theme(20, #ffeccc, #f2d0a4, #f95d5c, #a4303f, #870058)
++theme(21, #b1d490, #79b4a9, #676f54, #474935, #3e2a35)
++theme(22, #fff0b8, #f69d5c, #ed82b7, #cc6352, #861657)
++theme(23, #f3e37c, #f1a66a, #f26157, #a54657, #582630)
++theme(24, #f4f4f4, #f6e4f6, #f6bdd1, #c98986, #8b575c)
++theme(25, #f7ddd3, #fcc449, #f38245, #bc2c43, #6f0000)
++theme(26, #f9f9b6, #fbfc75, #4f86c6, #0471a6, #2d0000)
++theme(27, #36f1cd, #39a0ed, #13c4a3, #4c6085, #32322c)
++theme(28, #fcd7d3, #e39695, #df7373, #b42e2b, #750000)
++theme(29, #ffdf7f, #ff9528, #d85c00, #720e07, #45050c)
++theme(30, #f1e8b8, #f9e784, #e58f65, #ff3864, #48001d)
