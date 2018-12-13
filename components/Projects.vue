@@ -225,7 +225,7 @@
 
     .projects-title {
         padding: .6em 0;
-        font-family: "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+        font-family: "Quicksand", "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
         font-weight: 300;
         font-size: 1.7rem;
         letter-spacing: -.05rem;
@@ -406,7 +406,7 @@
 
     .projects-item_title {
         width: 100%;
-        font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+        font-family: "Quicksand", "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
         letter-spacing: -.1rem;
         font-size: 1.4vw;
         padding: 0 .2vw;
@@ -414,7 +414,7 @@
 
     .projects-item_subtitle {
         font-size: 1.2vw;
-        font-family: "MarkProLight", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+        font-family: "Quicksand", "MarkProLight", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
         letter-spacing: -.1rem;
     }
 
@@ -457,7 +457,7 @@
     }
 
     .projects-modal_title {
-        font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+        font-family: "Quicksand", "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
         letter-spacing: -.1rem;
         font-size: 1.4vw;
         padding: 0 .2vw;
