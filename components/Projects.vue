@@ -87,6 +87,30 @@
       return {
         projects: [
           {
+            "title": "OVH - Order funnel",
+            "img": [require("~/static/images/projets/optimum.jpg"), require("~/static/images/projets/optimum-2.jpg")],
+            "link": "https://www.ovh.com/fr/order/dedicated",
+            "alt": "OVH - Order funnel",
+            "description": "Responsive website for customer ordering OVH's services",
+            "date": duration(new Date(2018, 1, 2), null, `<br>`)
+          },
+          {
+            "title": "OVH - Manager",
+            "img": [require("~/static/images/projets/optimum.jpg"), require("~/static/images/projets/optimum-2.jpg")],
+            "link": "https://www.ovhtelecom.fr/manager/index.html#/",
+            "alt": "OVH - Manager",
+            "description": "Responsive website for customer management with OVH's services",
+            "date": duration(new Date(2017, 9, 2), new Date(2018, 1, 1), `<br>`)
+          },
+          {
+            "title": "RegionsJob",
+            "img": [require("~/static/images/projets/optimum.jpg"), require("~/static/images/projets/optimum-2.jpg")],
+            "link": "https://www.regionsjob.com/",
+            "alt": "RegionsJob",
+            "description": "Hybrid app on iOS/Android for job listing/job searching",
+            "date": duration(new Date(2017, 8, 2), new Date(2017, 1, 1), `<br>`)
+          },
+          {
             "title": "CableVision<br><em>Optimum</em>",
             "img": [require("~/static/images/projets/optimum.jpg"), require("~/static/images/projets/optimum-2.jpg")],
             "link": "http://www.optimum.com/",
@@ -214,7 +238,7 @@
 
 <style scoped>
     #projects .content {
-        width: 99vw;
+        width: 98vw;
     }
 
     @media (max-width: 1200px) {

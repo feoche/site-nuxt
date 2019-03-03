@@ -103,11 +103,16 @@
     }
 
     .network {
-        transition: all ease-in-out .1s;
         position: relative;
         width: 4em;
         height: 4em;
         margin: 0 2vw;
+    }
+
+    .network svg {
+        transition: all ease-in-out .1s;
+        -webkit-filter: drop-shadow(2px 2px 2px transparent);
+        filter: drop-shadow(2px 2px 2px transparent);
     }
 
     .network:hover svg, .network:focus svg {
