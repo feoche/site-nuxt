@@ -50,7 +50,7 @@
             missions: [`Meetup organization`, `In touch with <a href="http://lafrenchtech-rennes.fr" onclick="window.open(this.href); return false;">French Tech</a>`, `Monitor technological developments`]
           },
           {
-            job: `<a href="https://indieco.xyz" onclick="window.open(this.href); return false;">Indie Collective</a> Secretary`,
+            job: `<a href="https://indieco.xyz" onclick="window.open(this.href); return false;">Indie Collective</a> Secretary (& Founder)`,
             date: duration(new Date(2017, 3, 2)),
             missions: [`<a href="https://stunfest.com/" onclick="window.open(this.href); return false;">Stunfest</a> main staff`, `Game Jams organizer`, `Weekly meetup host`]
           },

@@ -28,7 +28,7 @@
                     section: `Front-End`,
                     skills: [
                         `CSS3`,
-                        `Javascript (ES6)`,
+                        `Javascript`,
                         `JSON`,
                         `XML`,
                         `PHP`
@@ -42,8 +42,6 @@
                         `Ionic/Cordova`,
                         `VueJS`,
                         `NodeJS`,
-                        `Lodash`,
-                        `jQuery`,
                         `Google Maps API`
                     ]
                 },
@@ -81,8 +79,8 @@
                     section: `Language`,
                     skills: [
                         `French - Mother tongue`,
-                        `English - Complete professional skill`,
-                        `German - Basic concepts`,
+                        `English - Professional skill`,
+                        `German - Concepts`,
                     ]
                 }
             ]
