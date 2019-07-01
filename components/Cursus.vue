@@ -56,7 +56,6 @@
         } else {
           res = `Since ${displayDate(date1)}`;
         }
-        console.info("years : ", d);
         return res + `${d >= 1 ? (" — " + years + "" + (fraction > 75 ? `¾` : fraction > 50 ? `½` : `¼`) + " year" + (years > 1 ? "s" : "")) : ""}`;
       };
       return {
@@ -106,71 +105,72 @@
   };
 </script>
 
-<style>
+<style scoped
+       lang="scss">
     #cv {
         color: white;
         text-align: left;
         text-shadow: 0 0 2px black;
-    }
 
-    .cv-title {
-        text-align: center;
-        padding: .6em 0;
-        font-family: "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-        font-weight: 300;
-        font-size: 1.7rem;
-        letter-spacing: -.05rem;
-    }
+        .cv-title {
+            text-align: center;
+            padding: .6em 0;
+            font-family: "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+            font-weight: 300;
+            font-size: 1.7rem;
+            letter-spacing: -.05rem;
+        }
 
-    .cv-items {
-        display: flex;
-        flex-flow: wrap;
-        justify-content: space-between;
-    }
-
-    .cv-item {
-        width: calc(50% - 1.6em);
-        padding: 1.2em 0;
-    }
-
-    @media (max-width: 800px) {
         .cv-items {
-            flex-flow: column wrap;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: space-between;
         }
 
         .cv-item {
-            width: auto;
-            padding: .8em 0;
+            width: calc(50% - 1.6em);
+            padding: 1.2em 0;
         }
-    }
 
-    .cv-item a {
-        color: #92b5fa;
-    }
+        @media (max-width: 800px) {
+            .cv-items {
+                flex-flow: column wrap;
+            }
 
-    .cv-item_title {
-        font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-        font-size: 1.2rem;
-        transform: scaleX(.9);
-        transform-origin: left center;
-    }
+            .cv-item {
+                width: auto;
+                padding: .8em 0;
+            }
+        }
 
-    .cv-item_subtitle, .subtitle {
-        color: #d4d4d4;
-        font-size: .8rem;
-    }
+        .cv-item a {
+            color: #92b5fa;
+        }
 
-    .cv-item_subtitle {
-        padding: .3em .8em 1em;
-    }
+        .cv-item_title {
+            font-family: "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+            font-size: 1.2rem;
+            transform: scaleX(.9);
+            transform-origin: left center;
+        }
 
-    .cv-item_missions {
-        padding: .2em 1.5em;
-    }
+        .cv-item_subtitle, .subtitle {
+            color: #d4d4d4;
+            font-size: .8rem;
+        }
 
-    .cv-item_mission {
-        padding: .1em;
-        font-size: 1rem;
-        list-style: circle;
+        .cv-item_subtitle {
+            padding: .3em .8em 1em;
+        }
+
+        .cv-item_missions {
+            padding: .2em 1.5em;
+        }
+
+        .cv-item_mission {
+            padding: .1em;
+            font-size: 1rem;
+            list-style: circle;
+        }
     }
 </style>

@@ -35,17 +35,17 @@
   import { differenceInQuarters, differenceInCalendarYears } from 'date-fns'
 
   export default {
-        data: () => {
-            let duration = (differenceInQuarters(new Date(), '2014-03-10')/4).toFixed(2);
-            const fraction = duration.split(`.`)[1];
-            duration = `${duration.split(`.`)[0]}${fraction > 50 ? `¾` : fraction > 25 ? `½` : `¼`}`;
+    data: () => {
+        let duration = (differenceInQuarters(new Date(), '2014-03-10')/4).toFixed(2);
+        const fraction = duration.split(`.`)[1];
+        duration = `${duration.split(`.`)[0]}${fraction > 50 ? `¾` : fraction > 25 ? `½` : `¼`}`;
 
-            return {
-                age: differenceInCalendarYears(new Date(), '1990-09-06'),
-                workDuration: duration
-            };
-        }
+        return {
+            age: differenceInCalendarYears(new Date(), '1990-09-06'),
+            workDuration: duration
+        };
     }
+}
 </script>
 
 <style scoped>
