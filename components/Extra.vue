@@ -65,68 +65,69 @@
   };
 </script>
 
-<style scoped>
+<style scoped
+       lang="scss">
     #extras {
         text-align: left;
-    }
 
-    .extra-title {
-        text-align: center;
-        padding: .6em 0;
-        font-family: "Quicksand", "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-        font-weight: 300;
-        font-size: 1.7rem;
-        letter-spacing: -.05rem;
-    }
+        .extra-title {
+            text-align: center;
+            padding: .6em 0;
+            font-family: "Quicksand", "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+            font-weight: 300;
+            font-size: 1.7rem;
+            letter-spacing: -.05rem;
+        }
 
-    .extra-items {
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
-    }
-
-    .extra-item {
-        width: 33%;
-        padding: 1.2em 0;
-    }
-
-    @media (max-width: 800px) {
         .extra-items {
-            flex-flow: column wrap;
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
         }
 
         .extra-item {
-            width: auto;
-            padding: .5em 0;
+            width: 33%;
+            padding: 1.2em 0;
         }
-    }
 
-    .extra-item a {
-        color: #92b5fa;
-    }
+        @media (max-width: 800px) {
+            .extra-items {
+                flex-flow: column wrap;
+            }
 
-    .extra-item_title {
-        font-size: 1.2rem;
-        font-family: "Quicksand", "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-        transform: scaleX(.9);
-        transform-origin: left center;
-    }
+            .extra-item {
+                width: auto;
+                padding: .5em 0;
+            }
+        }
 
-    .extra-item_subtitle {
-        font-size: .8rem;
-    }
+        .extra-item a {
+            color: #92b5fa;
+        }
 
-    .extra-item_subtitle {
-        padding: .3em .8em .5em;
-    }
+        .extra-item_title {
+            font-size: 1.2rem;
+            font-family: "Quicksand", "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+            transform: scaleX(.9);
+            transform-origin: left center;
+        }
 
-    .extra-item_missions {
-        padding: .2em 1.5em;
-    }
+        .extra-item_subtitle {
+            font-size: .8rem;
+        }
 
-    .extra-item_mission {
-        padding: .1em;
-        font-size: 1rem;
-        list-style: circle;
+        .extra-item_subtitle {
+            padding: .3em .8em .5em;
+        }
+
+        .extra-item_missions {
+            padding: .2em 1.5em;
+        }
+
+        .extra-item_mission {
+            padding: .1em;
+            font-size: 1rem;
+            list-style: circle;
+        }
     }
 </style>

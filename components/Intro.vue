@@ -38,12 +38,12 @@
         data: () => {
             let duration = `more than ${((differenceInQuarters(new Date(), '2014-03-10')/4).toFixed(2)).split(`.`)[0]}`;
 
-            return {
-                age: differenceInCalendarYears(new Date(), '1990-09-06'),
-                workDuration: duration
-            };
-        }
+        return {
+            age: differenceInCalendarYears(new Date(), '1990-09-06'),
+            workDuration: duration
+        };
     }
+}
 </script>
 
 <style scoped>

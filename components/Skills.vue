@@ -1,5 +1,6 @@
 <template>
-    <section id="skills" class="container">
+    <section id="skills"
+             class="container">
         <div class="content">
             <h2 class="skills-title">Skills</h2>
             <div class="skills-sections">
@@ -28,7 +29,7 @@
                     section: `Front-End`,
                     skills: [
                         `CSS3`,
-                        `Javascript`,
+                        `Javascript (ES6)`,
                         `JSON`,
                         `XML`,
                         `PHP`
@@ -88,65 +89,66 @@
     }
 </script>
 
-<style scoped>
+<style scoped
+       lang="scss">
     #skills {
         text-align: center;
-    }
 
-    .skills-title {
-        padding: .6em 0;
-        font-family: "Quicksand", "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-        font-weight: 300;
-        font-size: 1.7rem;
-        letter-spacing: -.05rem;
-    }
+        .skills-title {
+            padding: .6em 0;
+            font-family: "Quicksand", "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+            font-weight: 300;
+            font-size: 1.7rem;
+            letter-spacing: -.05rem;
+        }
 
-    .skills-sections {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
-
-    .skills-section {
-        text-align: left;
-        margin: .6em auto;
-        max-width: 13em;
-    }
-
-    .skills-section_title {
-        padding-bottom: .8em;
-    }
-
-    @media (max-width: 550px) {
         .skills-sections {
-            flex-flow: column wrap;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
         }
+
         .skills-section {
-            margin: .6em 0;
+            text-align: left;
+            margin: .6em auto;
+            max-width: 13em;
         }
-        .skills-section+.skills-section.skills-section {
-            padding-left: 0;
+
+        .skills-section_title {
+            padding-bottom: .8em;
         }
-    }
 
-    .skills-section+.skills-section {
-        padding-left: 1em;
-    }
+        @media (max-width: 550px) {
+            .skills-sections {
+                flex-flow: column wrap;
+            }
+            .skills-section {
+                margin: .6em 0;
+            }
+            .skills-section+.skills-section.skills-section {
+                padding-left: 0;
+            }
+        }
 
-    .skills-section_title {
-        padding: .6em 0;
-        font-family: "Quicksand", "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-        font-size: 1.2rem;
-        letter-spacing: -.05rem;
-        transform: scaleX(.9);
-        transform-origin: left center;
-    }
+        .skills-section+.skills-section {
+            padding-left: 1em;
+        }
 
-    .skills-section_list {
-        padding-left: .2em;
-    }
+        .skills-section_title {
+            padding: .6em 0;
+            font-family: "Quicksand", "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+            font-size: 1.2rem;
+            letter-spacing: -.05rem;
+            transform: scaleX(.9);
+            transform-origin: left center;
+        }
 
-    .skills-section_item {
-        padding-bottom: .3em;
+        .skills-section_list {
+            padding-left: .2em;
+        }
+
+        .skills-section_item {
+            padding-bottom: .3em;
+        }
     }
 </style>

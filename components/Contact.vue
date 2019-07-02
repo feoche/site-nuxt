@@ -83,76 +83,76 @@
     }
 </script>
 
-<style scoped>
-    .contact-title {
-        padding: .6em 0;
-        font-family: "Quicksand", "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-        font-weight: 300;
-        font-size: 1.7rem;
-        letter-spacing: -.05rem;
-    }
-    .contact-text {
-        padding: .8em 0 1em;
-    }
+<style scoped
+       lang="scss">
 
-    .networks {
-        width: 50vw;
-        margin: 0 auto 1em;
-        display: flex;
-        justify-content: space-around;
-    }
+    #contact {
+        .contact-title {
+            padding: .6em 0;
+            font-family: "Quicksand", "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+            font-weight: 300;
+            font-size: 1.7rem;
+            letter-spacing: -.05rem;
+        }
 
-    .network {
-        position: relative;
-        width: 4em;
-        height: 4em;
-        margin: 0 2vw;
-    }
+        .contact-text {
+            padding: .8em 0 1em;
+        }
 
-    .network svg {
-        transition: all ease-in-out .1s;
-        -webkit-filter: drop-shadow(2px 2px 2px transparent);
-        filter: drop-shadow(2px 2px 2px transparent);
-    }
+        .networks {
+            width: 50vw;
+            margin: 0 auto 1em;
+            display: flex;
+            justify-content: space-around;
+        }
 
-    .network:hover svg, .network:focus svg {
-        -webkit-filter: drop-shadow(2px 2px 2px #333);
-        filter: drop-shadow(2px 2px 2px #333);
-    }
+        .network {
+            transition: all ease-in-out .1s;
+            position: relative;
+            width: 4em;
+            height: 4em;
+            margin: 0 2vw;
+        }
 
-    .network svg {
-        position: relative;
-        max-width: 100%;
-        max-height: 100%;
-        -webkit-filter: drop-shadow(0px 0px 1px #333);
-        filter: drop-shadow(0px 0px 1px #333);
-    }
+        .network:hover svg, .network:focus svg {
+            -webkit-filter: drop-shadow(2px 2px 2px #333);
+            filter: drop-shadow(2px 2px 2px #333);
+        }
 
-    #linkedin svg {
-        fill: #0077B5 !important;
-    }
+        .network svg {
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            -webkit-filter: drop-shadow(0px 0px 1px #333);
+            filter: drop-shadow(0px 0px 1px #333);
+        }
 
-    #linkedin:before {
-        content:'';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 0;
-        background: radial-gradient(circle at center, white 65%, transparent 66%);
-        margin: auto;
-        max-width: 4em;
-        max-height: 3em;
-    }
+        #linkedin svg {
+            fill: #0077B5 !important;
+        }
 
-    #twitter svg {
-        fill: #55acee !important;
-    }
+        #linkedin:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 0;
+            background: radial-gradient(circle at center, white 65%, transparent 66%);
+            margin: auto;
+            max-width: 4em;
+            max-height: 3em;
+        }
+
+        #twitter svg {
+            fill: #55acee !important;
+        }
 
 
-    .farewell {
-        margin: 5em 0 0;
+        .farewell {
+            margin: 5em 0 0;
+        }
     }
 
 </style>

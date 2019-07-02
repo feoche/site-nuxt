@@ -39,7 +39,7 @@
             let visits = Number(localStorage.getItem('visitCount'));
             localStorage.setItem('visitCount', visits+1);
             return {
-                theme: `theme-` + (visits - 2)%31
+                theme: `theme-` + (visits - 5)%31
             }
         }
     }
