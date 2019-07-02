@@ -10,7 +10,7 @@
                      :key="index">
                     <div class="projects-item_container">
                         <img class="projects-item_img"
-                             :src="require(`~/static/images/projets/${item.key}.jpg`)">
+                             :src="showImg(item.key)">
                         <div class="projects-item_content">
                             <div class="projects-item_title"
                                 v-html="item.title"></div>
@@ -18,8 +18,7 @@
                                 <em class="projects-item_date"
                                     v-html="item.date"></em>
                             </div>
-                            <div class="projects-item_description"
-                                 v-show="activeProject === index">
+                            <div class="projects-item_description">
                                 <div class="project_description">
                                     <div class="project_description_summary"
                                          v-html="item.description"></div>
@@ -32,12 +31,12 @@
                                     </div>
                                 </div>
                                 <div class="project_images">
-                                    <!--<img class="project_img"
-                                         v-if="item.img[1]"
-                                         :src="item.img[1]">
                                     <img class="project_img"
-                                         v-if="item.img[2]"
-                                         :src="item.img[2]">-->
+                                         v-if="showImg(item.key+'-2')"
+                                         :src="showImg(item.key+'-2')">
+                                    <img class="project_img"
+                                         v-if="showImg(item.key+'-3')"
+                                         :src="showImg(item.key+'-3')">
                                 </div>
                             </div>
                         </div>
@@ -52,6 +51,15 @@
 import { format } from "date-fns";
 
 export default {
+    methods: {
+      showImg: (key) => {
+          try {
+              return require(`~/static/images/projets/${key}.jpg`)
+          } catch (e) {
+              return false
+          }
+        }
+    },
   data: () => {
     const displayShortDate = date => format(date, "MMMM");
     const displayDate = date => format(date, "MMMM YYYY");
@@ -318,17 +326,23 @@ export default {
       transition: min-height ease-in-out 0.3s;
       position: relative;
       width: 100%;
+      max-width: 69rem;
       min-height: 7rem;
+      margin: 0 auto;
       cursor: pointer;
       overflow: hidden;
 
       &.active {
         transition: min-height ease-in-out 0.3s;
-        min-height: 30rem;
+        max-height: 50rem;
         cursor: zoom-out;
 
+        .projects-item_description {
+          max-height: 25rem;
+        }
+
         .projects-item_content {
-          text-align: left;
+          transition: padding 0s;
           padding: 2rem;
         }
       }
@@ -348,6 +362,16 @@ export default {
         backface-visibility: visible;
       }
 
+      &_subtitle {
+        padding-bottom: 0;
+      }
+
+      &_description {
+        transition: max-height ease-in-out .3s;
+        overflow: hidden;
+        max-height: 0;
+      }
+
       &_container {
         display: flex;
         align-items: center;
@@ -357,7 +381,7 @@ export default {
         backface-visibility: hidden;
 
         .projects-item_content {
-          transition: opacity ease-in-out 0.2s;
+          transition: opacity ease-in-out .2s, padding ease-in-out 0s .3s;
           z-index: 1;
           opacity: 0;
           color: white;
@@ -366,7 +390,7 @@ export default {
 
           &::before {
             content: "";
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             position: absolute;
             top: 0;
             bottom: 0;
@@ -381,15 +405,21 @@ export default {
           flex-flow: row wrap;
           justify-content: space-evenly;
           margin: 2rem 0 0;
+          align-items: start;
 
           .project_img {
-            max-width: 40%;
+            max-width: 49%;
           }
+        }
+
+        .project_description {
+          margin-top: 1rem;
         }
 
         .project_description_keywords {
           display: flex;
           flex-flow: row wrap;
+          justify-content: center;
           margin: 1rem 0 0;
 
           .project_description_keyword {
