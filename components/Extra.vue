@@ -39,7 +39,6 @@
         } else {
           res = `Since ${displayDate(date1)}`;
         }
-        console.info("years : ", d);
         return res + `${d >= 1 ? (" — " + years + "" + (fraction > 75 ? `¾` : fraction > 50 ? `½` : `¼`) + " year" + (years > 1 ? "s" : "")) : ""}`;
       };
       return {
