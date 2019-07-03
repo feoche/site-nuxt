@@ -40,7 +40,7 @@
         }
 
         .subtitle {
-            font-family: "Quicksand", "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+            font-family: "Remissis", Roboto, "Helvetica Neue", Arial, sans-serif;
             font-weight: 300;
             font-size: 2rem;
             font-style: normal;

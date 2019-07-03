@@ -23,6 +23,7 @@ module.exports = {
         '~/assets/fonts/MarkProLight.css',
         '~/assets/fonts/MarkProMedium.css',
         '~/assets/fonts/MarkProBold.css',
+        '~/assets/fonts/remissis.css',
 
         '~/assets/sass/themes.sass'
     ],

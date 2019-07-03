@@ -72,7 +72,6 @@
         .extra-title {
             text-align: center;
             padding: .6em 0;
-            font-family: "Quicksand", "MarkProBold", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
             font-weight: 300;
             font-size: 1.7rem;
             letter-spacing: -.05rem;
@@ -106,7 +105,6 @@
 
         .extra-item_title {
             font-size: 1.2rem;
-            font-family: "Quicksand", "MarkProMedium", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
             transform: scaleX(.9);
             transform-origin: left center;
         }

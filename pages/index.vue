@@ -39,7 +39,7 @@
             let visits = Number(localStorage.getItem('visitCount'));
             localStorage.setItem('visitCount', visits+1);
             return {
-                theme: `theme-` + (visits - 5)%31
+                theme: `theme-` + (visits - 10)%31
             }
         }
     }
@@ -62,7 +62,7 @@
     [class$="-title"] {
         text-align: center;
         padding: .6em 0;
-        font-family: "MarkProBold", "Source Sans Pro", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-family: "Remissis", Roboto, "Helvetica Neue", Arial, sans-serif;
         font-size: 1.7rem;
     }
 
