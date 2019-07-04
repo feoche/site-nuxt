@@ -2,7 +2,7 @@
     <section id="introduction" class="container">
         <div class="content">
             <p class="introduction-text">
-                Hi! I'm François, a 28 year-old front-end developer from Rennes, France.
+                Hi! I'm François, a {{ age }} year-old front-end developer from Rennes, France.
             </p>
             <p class="introduction-text">
                 I've been working for {{ workDuration }} years as a developer in <a v-smooth-scroll="{duration:2000}"
@@ -19,12 +19,11 @@
             </p>
             <p class="introduction-text">
                 On this website you will mostly find <a v-smooth-scroll="{duration:2000}" href="#projects">what I have
-                worked on</a> and what <a v-smooth-scroll="{duration:2000}" href="#skills">I'm fond of</a>, but
-                also <a v-smooth-scroll="{duration:2000}" href="#projects-personal">my personal projects</a> and some of
+                worked on</a> and what <a v-smooth-scroll="{duration:2000}" href="#skills">I'm fond of</a>, and some of
                 the <a v-smooth-scroll="{duration:2000}" href="#extras">side activities I take care of</a>.
             </p>
             <p class="introduction-text">
-                To conclude, you will have the different ways to <a v-smooth-scroll="{duration:2000}" href="#contact">contact
+                Eventually, you will have the different ways to <a v-smooth-scroll="{duration:2000}" href="#contact">contact
                 me</a> or follow any news. Enjoy your visit!
             </p>
         </div>
@@ -32,32 +31,36 @@
 </template>
 
 <script>
-  import { differenceInQuarters, differenceInCalendarYears } from 'date-fns'
+import { differenceInQuarters, differenceInCalendarYears } from "date-fns";
 
-  export default {
-        data: () => {
-            let duration = `more than ${((differenceInQuarters(new Date(), '2014-03-10')/4).toFixed(2)).split(`.`)[0]}`;
+export default {
+  data: () => {
+    let duration = `more than ${
+      (differenceInQuarters(new Date(), "2014-03-10") / 4)
+        .toFixed(2)
+        .split(`.`)[0]
+    }`;
 
-        return {
-            age: differenceInCalendarYears(new Date(), '1990-09-06'),
-            workDuration: duration
-        };
-    }
-}
+    return {
+      age: differenceInCalendarYears(new Date(), "1990-09-06"),
+      workDuration: duration
+    };
+  }
+};
 </script>
 
 <style scoped>
-    #introduction {
-        padding: 6vh 0;
-        margin: 0 auto;
-        text-align: left;
-    }
+#introduction {
+  padding: 6vh 0;
+  margin: 0 auto;
+  text-align: left;
+}
 
-    .introduction-text {
-        padding: .3em 0;
-    }
+.introduction-text {
+  padding: 0.3em 0;
+}
 
-    .introduction-text a {
-        color: #005194;
-    }
+.introduction-text a {
+  color: #005194;
+}
 </style>

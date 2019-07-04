@@ -19,7 +19,7 @@
                 </a>
             </div>
             <p class="contact-text">
-                Besides, you can also check out my work on many websites :
+                Yyou can also check out my work on many websites :
             </p>
             <div class="networks">
                 <a v-for="(item, index) in links"
@@ -67,11 +67,6 @@
                     name: `GitHub`,
                     icon: `github`,
                     url: `https://github.com/feoche`
-                },
-                {
-                    name: `feoche.fr`,
-                    icon: `programming`,
-                    url: `https://feoche.fr`
                 },
                 {
                     name: `Codepen`,
