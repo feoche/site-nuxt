@@ -1,3 +1,9 @@
+const routerBase = process.env.DEPLOY_ENV === "GH_PAGES" ? {
+        router: {
+            base: "/site-nuxt/"
+        }
+    } : {};
+
 module.exports = {
     /*
     ** Headers of the page
@@ -13,6 +19,7 @@ module.exports = {
             {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
         ]
     },
+    ...routerBase,
     /*
     ** Customize the progress bar color
     */
