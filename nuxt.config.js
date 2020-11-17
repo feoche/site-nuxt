@@ -24,7 +24,6 @@ module.exports = {
     ** Customize the progress bar color
     */
     loading: {color: '#3B8070'},
-    target: 'static',
     // Allows page refresh to work on github pages
     generate: {
         fallback: "404.html"
