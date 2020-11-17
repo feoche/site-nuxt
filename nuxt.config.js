@@ -24,6 +24,7 @@ module.exports = {
     ** Customize the progress bar color
     */
     loading: {color: '#3B8070'},
+    target: 'static',
     css: [
         '~/assets/fonts/BoosterNextFYBold.css',
         '~/assets/fonts/BoosterNextFYMedium.css',
