@@ -96,7 +96,7 @@
 
     #skills {
         background-color: #fefefe;
-        background-image:  linear-gradient(30deg, #fafafa 12%, transparent 12.5%, transparent 87%, #fafafa 87.5%, #fafafa), linear-gradient(150deg, #fafafa 12%, transparent 12.5%, transparent 87%, #fafafa 87.5%, #fafafa), linear-gradient(30deg, #fafafa 12%, transparent 12.5%, transparent 87%, #fafafa 87.5%, #fafafa), linear-gradient(150deg, #fafafa 12%, transparent 12.5%, transparent 87%, #fafafa 87.5%, #fafafa), linear-gradient(60deg, #fafafa77 25%, transparent 25.5%, transparent 75%, #fafafa77 75%, #fafafa77), linear-gradient(60deg, #fafafa77 25%, transparent 25.5%, transparent 75%, #fafafa77 75%, #fafafa77);
+        background-image:  linear-gradient(30deg, #ececec 12%, transparent 12.5%, transparent 87%, #ececec 87.5%, #ececec), linear-gradient(150deg, #ececec 12%, transparent 12.5%, transparent 87%, #ececec 87.5%, #ececec), linear-gradient(30deg, #ececec 12%, transparent 12.5%, transparent 87%, #ececec 87.5%, #ececec), linear-gradient(150deg, #ececec 12%, transparent 12.5%, transparent 87%, #ececec 87.5%, #ececec), linear-gradient(60deg, #ececec77 25%, transparent 25.5%, transparent 75%, #ececec77 75%, #ececec77), linear-gradient(60deg, #ececec77 25%, transparent 25.5%, transparent 75%, #ececec77 75%, #ececec77);
         background-size: 40px 70px;
         background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
     }
