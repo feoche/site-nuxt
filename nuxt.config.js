@@ -39,9 +39,7 @@ module.exports = {
     /*
     ** Build configuration
     */
-    buildDir: '_nuxt',
     build: {
-        publicPath: '_nuxt/dist/',
         /*
         ** Run ESLint on save
         */
