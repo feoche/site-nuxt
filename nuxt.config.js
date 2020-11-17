@@ -25,6 +25,10 @@ module.exports = {
     */
     loading: {color: '#3B8070'},
     target: 'static',
+    // Allows page refresh to work on github pages
+    generate: {
+        fallback: "404.html"
+    },
     css: [
         '~/assets/fonts/BoosterNextFYBold.css',
         '~/assets/fonts/BoosterNextFYMedium.css',
