@@ -18,10 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # 1-liner to cache yarn and node_modules  
-      - uses: EgorDm/gha-yarn-node-cache@v1
-        
+    steps:        
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - run: yarn
