@@ -22,6 +22,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - run: yarn
+        
+      - run: yarn rebuild node-sass
 
       - uses: Adzz/yarn_command_action@v1.0.0
         with:
