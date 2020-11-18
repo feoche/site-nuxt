@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: yarn
         
-      - run: yarn rebuild node-sass
+      - run: npm rebuild node-sass
 
       - uses: Adzz/yarn_command_action@v1.0.0
         with:
