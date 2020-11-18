@@ -21,6 +21,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        
+      - uses: Adzz/yarn_command_action@v1.0.0  
       
       # 1-liner to cache yarn and node_modules  
       - uses: EgorDm/gha-yarn-node-cache@v1
