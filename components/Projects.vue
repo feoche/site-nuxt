@@ -10,7 +10,8 @@
                      :key="index">
                     <div class="projects-item_container">
                         <img class="projects-item_img"
-                             :src="showImg(item.key)">
+                             :src="showImg(item.key)"
+                             loading="lazy">
                         <div class="projects-item_content">
                             <div class="projects-item_title"
                                 v-html="item.title"></div>
@@ -33,10 +34,12 @@
                                 <div class="project_images">
                                     <img class="project_img"
                                          v-if="showImg(item.key+'-2')"
-                                         :src="showImg(item.key+'-2')">
+                                         :src="showImg(item.key+'-2')"
+                                         loading="lazy">
                                     <img class="project_img"
                                          v-if="showImg(item.key+'-3')"
-                                         :src="showImg(item.key+'-3')">
+                                         :src="showImg(item.key+'-3')"
+                                         loading="lazy">
                                 </div>
                             </div>
                         </div>

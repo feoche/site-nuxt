@@ -3,7 +3,9 @@
         <div class="content">
             <img class="logo-img"
                  alt="Photo of myself"
-                 src="~/static/images/photo.jpg">
+                 src="~/static/images/photo.jpg"
+                 rel="preload"
+                 loading="eager">
             <h1>
                 <span class="title">
                   François Eoche
