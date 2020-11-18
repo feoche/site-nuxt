@@ -25,8 +25,4 @@ jobs:
         
       - run: npm rebuild node-sass
 
-      - uses: Adzz/yarn_command_action@v1.0.0
-        with:
-          # Specify whether to use npm or yarn to run the tests. May be npm or yarn only defaults to yarn
-          # The command you wish to run e.g. test
-          command: deploy
+      - run: yarn deploy
