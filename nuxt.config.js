@@ -21,6 +21,7 @@ module.exports = {
     generate: {
         fallback: "404.html"
     },
+    target: "static",
     css: [
         '~/assets/fonts/BoosterNextFYBold.css',
         '~/assets/fonts/BoosterNextFYMedium.css',
