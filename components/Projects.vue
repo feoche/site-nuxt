@@ -10,8 +10,7 @@
                      :key="index">
                     <div class="projects-item_container">
                         <img class="projects-item_img"
-                             :src="showImg(item.key)"
-                             loading="lazy">
+                             :src="showImg(item.key)">
                         <div class="projects-item_content">
                             <div class="projects-item_title"
                                 v-html="item.title"></div>
@@ -34,12 +33,10 @@
                                 <div class="project_images">
                                     <img class="project_img"
                                          v-if="showImg(item.key+'-2')"
-                                         :src="showImg(item.key+'-2')"
-                                         loading="lazy">
+                                         :src="showImg(item.key+'-2')">
                                     <img class="project_img"
                                          v-if="showImg(item.key+'-3')"
-                                         :src="showImg(item.key+'-3')"
-                                         loading="lazy">
+                                         :src="showImg(item.key+'-3')">
                                 </div>
                             </div>
                         </div>
@@ -83,11 +80,11 @@ export default {
       projects: [
         {
           key: "ovhorder",
-          title: "OVH - Order funnel",
+          title: "OVHcloud - Order funnel",
           link: "https://www.ovh.com/fr/order/dedicated",
-          alt: "OVH - Order funnel",
+          alt: "OVHcloud - Order funnel",
           description:
-            "Responsive website for customer ordering OVH's services",
+            "Responsive website for customer ordering OVHcloud's services",
           date: duration(new Date(2018, 1, 2), null, `<br>`)
         },
         {
