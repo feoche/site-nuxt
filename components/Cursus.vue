@@ -44,7 +44,7 @@ import { format } from "date-fns";
 
 export default {
   data: () => {
-    const displayDate = date => format(date, "MMM. YYYY");
+    const displayDate = date => format(date, "MMM. yyyy");
     const duration = (date1, date2) =>
       `${
         date2

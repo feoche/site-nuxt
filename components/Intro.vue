@@ -36,13 +36,13 @@ import { differenceInQuarters, differenceInCalendarYears } from "date-fns";
 export default {
   data: () => {
     let duration = `more than ${
-      (differenceInQuarters(new Date(), "2014-03-10") / 4)
+      (differenceInQuarters(new Date(), new Date(2014, 3, 10)) / 4)
         .toFixed(2)
         .split(`.`)[0]
     }`;
 
     return {
-      age: differenceInCalendarYears(new Date(), "1990-09-06"),
+      age: differenceInCalendarYears(new Date(), new Date(1990, 9, 6)),
       workDuration: duration
     };
   }

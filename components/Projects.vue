@@ -62,7 +62,7 @@ export default {
     },
   data: () => {
     const displayShortDate = date => format(date, "MMMM");
-    const displayDate = date => format(date, "MMMM YYYY");
+    const displayDate = date => format(date, "MMMM yyyy");
     const duration = (date1, date2 = null, separator = `—`) => {
       let res = ``;
       if (date2) {
@@ -405,7 +405,7 @@ export default {
           flex-flow: row wrap;
           justify-content: space-evenly;
           margin: 2rem 0 0;
-          align-items: start;
+          align-items: flex-start;
 
           .project_img {
             max-width: 49%;
