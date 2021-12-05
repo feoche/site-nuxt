@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { format, differenceInQuarters } from "date-fns";
+import { format } from "date-fns";
 
 export default {
   data: () => {
@@ -52,8 +52,7 @@ export default {
           date: duration(new Date(2017, 3, 2)),
           missions: [
             `<a href="https://stunfest.com/" onclick="window.open(this.href); return false;">Stunfest</a> main staff`,
-            `Game Jams organizer`,
-            `Weekly meetup host`
+            `Game Jams organizer`
           ]
         },
         {

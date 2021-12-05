@@ -56,13 +56,13 @@ export default {
     return {
       cursus: [
         {
-          job: `Front-End UX Developer`,
+          job: `IT Technical Leader`,
           date: duration(new Date(2017, 8)),
-          place: `<a class=\"cv-item_link\" href="http://ovh.com/" onclick="window.open(this.href); return false;">OVH</a>`,
+          place: `<a class=\"cv-item_link\" href="http://ovh.com/" onclick="window.open(this.href); return false;">OVHcloud</a>`,
           missions: [
-            `Web/Mobile site integration - Order funnel & Customer area`,
-            `Web Accessibility`,
-            `Monitor technological developments`
+            `In charge of OVHcloud Design System development`,
+            `Order funnel front-end development`,
+            `Web Accessibility representative`
           ]
         },
         {

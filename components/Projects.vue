@@ -79,13 +79,22 @@ export default {
     return {
       projects: [
         {
+          key: "ovhdesignsystem",
+          title: "OVHcloud - Design System",
+          link: "https://www.ovh.com/fr/order/dedicated",
+          alt: "OVHcloud - Design System",
+          description:
+            "OVHcloud Design System is a collection of reusable components, designed to be used mostly in the OVHcloud platform.",
+          date: duration(new Date(2021, 7, 1), null, `<br>`)
+        },
+        {
           key: "ovhorder",
           title: "OVHcloud - Order funnel",
           link: "https://www.ovh.com/fr/order/dedicated",
           alt: "OVHcloud - Order funnel",
           description:
             "Responsive website for customer ordering OVHcloud's services",
-          date: duration(new Date(2018, 1, 2), null, `<br>`)
+          date: duration(new Date(2018, 1, 2), new Date(2021, 6, 30), `<br>`)
         },
         {
           key: `ovhmanager`,

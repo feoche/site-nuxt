@@ -28,21 +28,20 @@
                 {
                     section: `Front-End`,
                     skills: [
+                        `HTML5`,
                         `CSS3`,
-                        `Javascript (ES6)`,
-                        `JSON`,
-                        `XML`,
-                        `PHP`
+                        `TypeScript`,
+                        `JSON`
                     ]
                 },
                 {
                     section: `Frameworks & APIs`,
                     skills: [
-                        `Sass/Less`,
+                        `CSS Preprocessors`,
                         `Angular/AngularJS`,
-                        `Ionic/Cordova`,
                         `VueJS`,
                         `NodeJS`,
+                        `Ionic/Cordova`,
                         `Google Maps API`
                     ]
                 },
@@ -50,10 +49,9 @@
                     section: `IDEs & Tools`,
                     skills: [
                         `IntelliJ Suite`,
-                        `Brackets`,
+                        `VSCode`,
                         `ZSH`,
-                        `Atom`,
-                        `VSCode`
+                        `Atom`
                     ]
                 },
                 {
@@ -81,7 +79,7 @@
                     skills: [
                         `French - Mother tongue`,
                         `English - Professional skill`,
-                        `German - Concepts`,
+                        `German - Understanding`,
                     ]
                 }
             ]
