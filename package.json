@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "date-fns": "^2.16.1",
-    "node-sass": "^5.0.0",
+    "node-sass": "^9.0.0",
     "nuxt": "^2.14.7",
     "sass-loader": "^10.1.0",
     "vue-js-modal": "^2.0.0-rc.6",
